@@ -9,7 +9,7 @@ namespace MessageAppDemo
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }
