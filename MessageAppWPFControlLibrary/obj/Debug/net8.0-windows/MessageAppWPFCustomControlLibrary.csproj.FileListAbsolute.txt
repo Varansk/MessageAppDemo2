@@ -1,0 +1,17 @@
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\bin\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.deps.json
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\bin\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\bin\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.pdb
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary_MarkupCompile.cache
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary_MarkupCompile.lref
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\Themes\Generic.baml
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.g.resources
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.AssemblyInfoInputs.cache
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.AssemblyInfo.cs
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\refint\MessageAppWPFCustomControlLibrary.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.pdb
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\ref\MessageAppWPFCustomControlLibrary.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppWPFControlLibrary\obj\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.sourcelink.json
