@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.Users.UserData;
 
-namespace MessageAppDemo.Backend.Message.MessageDatas
+namespace MessageAppDemo2.Backend.Message.MessageDatas
 {
     public class VideoMessage : MessageBase, IHaveQuotedMessage, IHaveTextMessage
     {
@@ -18,7 +18,7 @@ namespace MessageAppDemo.Backend.Message.MessageDatas
         }
         public override object Clone()
         {
-            VideoMessage ClonedInstance = this.MemberwiseClone() as VideoMessage;
+            VideoMessage ClonedInstance = MemberwiseClone() as VideoMessage;
             ClonedInstance.MessageSender = MessageSender.Clone() as User;
             ClonedInstance.WhichChatMessageSent = WhichChatMessageSent.Clone() as ChatBase;
 

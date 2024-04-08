@@ -1,12 +1,12 @@
-﻿using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo.Backend.SystemData.ChangeController;
-using MessageAppDemo.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
-using MessageAppDemo.Backend.SystemData.ExtensionClasses.CollectionExtensions;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
+using MessageAppDemo2.Backend.SystemData.ChangeController;
+using MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
+using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
+using MessageAppDemo2.Backend.Users.UserData;
 using System;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.UserRepository
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserRepository
 {
 
     public class VirtualDatabaseUserRepository : Repository<User, Guid>

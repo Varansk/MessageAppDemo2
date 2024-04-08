@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
+﻿using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
+using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys
+namespace MessageAppDemo2.Backend.DataBase.Repositorys
 {
     public class DatabaseRepository<Item, ID> where Item : class
     {

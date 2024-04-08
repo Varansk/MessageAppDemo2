@@ -1,13 +1,13 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Data;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.MessageRepository
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRepository
 {
     public class MSSQLMessageRepository : Repository<MessageBase, int>, IRunStoredProcedure<SqlCommand, SqlDataReader>, IChatSelector
     {
@@ -16,7 +16,7 @@ namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.MessageRepo
 
         public MSSQLMessageRepository(MSSQLDatabase Database, ChatBase DependentChat)
         {
-            this.MSSQLDatabase = Database;
+            MSSQLDatabase = Database;
             this.DependentChat = DependentChat;
             UpdateVirtualList();
         }
@@ -31,7 +31,7 @@ namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.MessageRepo
             SqlDataReader reader = StoredProcedureCommandBuilder(cmd, SPName, ParameterNames, Values).ExecuteReader();
             cmd.CommandType = CommandType.Text;
             return reader;
-          
+
         }
 
         private SqlCommand StoredProcedureCommandBuilder(SqlCommand cmd, string SPName, string[] ParameterNames, object[] Values)
@@ -78,7 +78,7 @@ namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.MessageRepo
 
         public void SetDependentChat(ChatBase Chat)
         {
-            this.DependentChat = Chat;
+            DependentChat = Chat;
         }
     }
 }

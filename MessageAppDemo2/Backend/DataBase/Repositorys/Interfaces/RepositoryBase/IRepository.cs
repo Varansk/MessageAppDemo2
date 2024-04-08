@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
+﻿using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
 {
     public interface IRepository<Item, ID> where Item : class
     {

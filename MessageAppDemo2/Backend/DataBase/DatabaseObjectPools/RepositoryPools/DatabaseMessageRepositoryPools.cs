@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.DataBase.Repositorys;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.SystemData.ObjectPooler;
+﻿using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.SystemData.ObjectPooler;
 
-namespace MessageAppDemo.Backend.DataBase.DatabaseObjectPools.RepositoryPools
+namespace MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools
 {
     public static class DatabaseMessageRepositoryPools
     {

@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.Users.UserData;
-using MessageAppDemo.Backend.Users.UserManagers.Managers.Interfaces;
+﻿using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserManagers.Managers.Interfaces;
 using System;
 
-namespace MessageAppDemo.Backend.Users.UserManagers
+namespace MessageAppDemo2.Backend.Users.UserManagers
 {
     public class UserManager
     {

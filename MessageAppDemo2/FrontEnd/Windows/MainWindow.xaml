@@ -1,15 +1,15 @@
-﻿<Window x:Class="MessageAppDemo.MainWindow"
+﻿<Window x:Class="MessageAppDemo2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MessageAppDemo"
+        xmlns:local="clr-namespace:MessageAppDemo2"
         mc:Ignorable="d"
-        Title="MessageAppDemo2" Height="600" Width="800"
+        Title="MessageAppDemo2" Height="650" Width="800"
         WindowStartupLocation="CenterScreen"
         Icon="/FrontEnd/Resources/Icons/Images/NoImageIcon.png"
         >
     <Grid>
-
+        
     </Grid>
 </Window>

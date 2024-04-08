@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MessageAppDemo.Backend.SystemData.ChangeController.Interfaces
+namespace MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces
 {
     public abstract class BaseController<Item>
     {

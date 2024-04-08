@@ -1,0 +1,190 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Converters="clr-namespace:YazilimCalismasiWPF8.Converters"
+    xmlns:MyNamespace="clr-namespace:MessageAppWPFCustomControlLibrary"
+    xmlns:local="clr-namespace:YazilimCalismasiWPF8">
+
+
+    <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="local:TextboxExtended">
+        <Style.Resources>
+            <Converters:SumConverter x:Key="SumConverter" />
+            <BooleanToVisibilityConverter x:Key="BoolVisibility" />
+            <Converters:GridLenghtConverter x:Key="StarConverter" />
+        </Style.Resources>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TextboxExtended">
+                    <Grid
+                        x:Name="maingrid"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="columnwhitespace" Width="auto" />
+                            <ColumnDefinition x:Name="column0" Width="auto" />
+                            <ColumnDefinition x:Name="column1" Width="5" />
+                            <ColumnDefinition x:Name="column2" Width="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ContentWidth, Converter={StaticResource StarConverter}, ConverterParameter=1}" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="rowwhitespace" Height="auto" />
+                            <RowDefinition x:Name="row0" Height="auto" />
+                            <RowDefinition x:Name="row1" Height="3" />
+                            <RowDefinition x:Name="row2" Height="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ContentHeight, Converter={StaticResource StarConverter}, ConverterParameter=1}" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            x:Name="header"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            FontSize="{TemplateBinding HeaderFontSize}"
+                            FontStyle="{TemplateBinding HeaderFontStyle}"
+                            FontWeight="{TemplateBinding HeaderFontWeight}"
+                            Foreground="{TemplateBinding HeaderColor}"
+                            Text="{TemplateBinding Header}" />
+                        <Border
+                            x:Name="content"
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding TextboxCornerRadius}">
+                            <Border.Child>
+                                <Grid>
+                                    <TextBlock
+                                        x:Name="insideheader"
+                                        Margin="5,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Panel.ZIndex="1"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        FontStyle="{TemplateBinding FontStyle}"
+                                        FontWeight="{TemplateBinding FontWeight}"
+                                        Foreground="#AAAAAA"
+                                        Text="{TemplateBinding InsideHeader}"
+                                        Visibility="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsTextEmpty, Converter={StaticResource BoolVisibility}}" />
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Grid>
+                            </Border.Child>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HeaderPozition" Value="Top">
+                            <Setter TargetName="header" Property="HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="header" Property="VerticalAlignment" Value="Bottom" />
+                            <Setter TargetName="header" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="header" Property="Grid.Column" Value="3" />
+
+                            <Setter TargetName="row1" Property="Height" Value="3" />
+                            <Setter TargetName="column1" Property="Width" Value="0" />
+                        </Trigger>
+
+                        <Trigger Property="HeaderPozition" Value="Left">
+                            <Setter TargetName="header" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="header" Property="Grid.Row" Value="3" />
+                            <Setter TargetName="header" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="header" Property="VerticalAlignment" Value="Center" />
+
+                            <Setter TargetName="row1" Property="Height" Value="0" />
+                            <Setter TargetName="column1" Property="Width" Value="5" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+
+
+
+
+
+
+
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle
+                        Margin="2"
+                        SnapsToDevicePixels="true"
+                        Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                        StrokeDashArray="1 2"
+                        StrokeThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type MyNamespace:ButtonExtended}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MyNamespace:ButtonExtended}">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ButtonCornerRadius}"
+                        SnapsToDevicePixels="true">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsDefaulted" Value="true">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=OnMouseEnterBorderBrush}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=OnMouseClickBorderBrush}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Button.Disabled.Foreground}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

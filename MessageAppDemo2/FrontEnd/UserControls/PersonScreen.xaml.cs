@@ -1,0 +1,32 @@
+﻿using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace MessageAppDemo2.FrontEnd.UserControls
+{
+    /// <summary>
+    /// PersonScreen.xaml etkileşim mantığı
+    /// </summary>
+    public partial class PersonScreen : UserControl
+    {
+        private PersonScreenMainViewModel _personScreenMainViewModel = new();
+
+        public PersonScreen()
+        {
+            InitializeComponent();
+            this.DataContext = _personScreenMainViewModel;
+        }
+    }
+}

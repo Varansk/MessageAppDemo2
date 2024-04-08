@@ -1,14 +1,18 @@
-﻿using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Users.UserData;
 using System;
 
-namespace MessageAppDemo.Backend.Login_SignUp.UserLoginClass
+namespace MessageAppDemo2.Backend.Login_SignUp.UserLoginClass
 {
-    internal class AdminAuth : BaseAuth<Admin>
+    public class AdminAuth : BaseAuth
     {
 
         public AdminAuth(Admin Instance) : base(Instance)
         {
-
+            
+        }
+        public AdminAuth()
+        {
+                
         }
 
         public override bool Login()

@@ -1,14 +1,14 @@
-﻿using MessageAppDemo.Backend.Users.UserData;
-using MessageAppDemo.Backend.ValueChecksAndControls;
+﻿using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.ValueChecksAndControls;
 using System;
 
-namespace MessageAppDemo.Backend.Login_SignUp
+namespace MessageAppDemo2.Backend.Login_SignUp
 {
-    public abstract class BaseAuth<T> where T : User
+    public abstract class BaseAuth
     {
         public virtual bool Login()
         {
-            return true;
+            return (Instance is not null) && (UserValueChecks.FindUser(Instance) is not null);
         }
         public virtual bool SignUp()
         {
@@ -18,16 +18,16 @@ namespace MessageAppDemo.Backend.Login_SignUp
             Func += UserValueChecks.CheckPassword;
             Func += UserValueChecks.CheckPhoneNumber;
 
-            if (UserValueChecks.CheckUser(Instance, Func))
-            {
-                return true;
-            }
-            return false;
+            return UserValueChecks.CheckUser(Instance, Func) && !UserValueChecks.IsThisNumberExists(Instance);
         }
-        protected T Instance { get; set; }
-        public BaseAuth(T User)
+        public User Instance { get; set; }
+        public BaseAuth(User User)
         {
             Instance = User;
+        }
+        public BaseAuth()
+        {
+
         }
     }
 }

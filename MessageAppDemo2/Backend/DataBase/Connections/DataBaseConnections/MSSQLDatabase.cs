@@ -1,7 +1,7 @@
-﻿using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections.Interfaces;
+﻿using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections.Interfaces;
 using Microsoft.Data.SqlClient;
 
-namespace MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections
+namespace MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections
 {
     public class MSSQLDatabase : IBasicDatabase
     {

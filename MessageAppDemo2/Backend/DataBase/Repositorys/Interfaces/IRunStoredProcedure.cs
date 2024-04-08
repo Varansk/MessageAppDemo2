@@ -1,4 +1,4 @@
-﻿namespace MessageAppDemo.Backend.DataBase.Repositorys.Interfaces
+﻿namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces
 {
     internal interface IRunStoredProcedure<Command, Reader> where Command : class, new() where Reader : class
     {

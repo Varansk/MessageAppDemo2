@@ -1,6 +1,7 @@
-﻿using System.Windows;
+﻿using MessageAppDemo2.FrontEnd.UserControls;
+using System.Windows;
 
-namespace MessageAppDemo
+namespace MessageAppDemo2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -9,7 +10,8 @@ namespace MessageAppDemo
     {
         public MainWindow()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            this.Content = new LoginView();
         }
     }
 }

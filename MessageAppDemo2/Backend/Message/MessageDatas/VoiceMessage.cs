@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.Users.UserData;
 
-namespace MessageAppDemo.Backend.Message.MessageDatas
+namespace MessageAppDemo2.Backend.Message.MessageDatas
 {
     public class VoiceMessage : MessageBase, IHaveQuotedMessage
     {
@@ -16,7 +16,7 @@ namespace MessageAppDemo.Backend.Message.MessageDatas
         }
         public override object Clone()
         {
-            VoiceMessage ClonedInstance = this.MemberwiseClone() as VoiceMessage;
+            VoiceMessage ClonedInstance = MemberwiseClone() as VoiceMessage;
             ClonedInstance.MessageSender = MessageSender.Clone() as User;
             ClonedInstance.WhichChatMessageSent = WhichChatMessageSent.Clone() as ChatBase;
 

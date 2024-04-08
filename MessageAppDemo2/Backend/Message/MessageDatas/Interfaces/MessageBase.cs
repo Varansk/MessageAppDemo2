@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Users.UserData;
 using System;
 
-namespace MessageAppDemo.Backend.Message.MessageDatas.Interfaces
+namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
 {
     public abstract class MessageBase : ICloneable
     {

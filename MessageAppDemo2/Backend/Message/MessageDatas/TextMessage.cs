@@ -1,10 +1,10 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.SystemData.UploadedFile;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.SystemData.UploadedFile;
+using MessageAppDemo2.Backend.Users.UserData;
 using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.Message.MessageDatas
+namespace MessageAppDemo2.Backend.Message.MessageDatas
 {
     public class TextMessage : MessageBase, IFileUploadableMessage<UploadedFile<object>>, IHaveQuotedMessage, IHaveTextMessage
     {
@@ -23,7 +23,7 @@ namespace MessageAppDemo.Backend.Message.MessageDatas
         }
         public override object Clone()
         {
-            TextMessage ClonedInstance = this.MemberwiseClone() as TextMessage;
+            TextMessage ClonedInstance = MemberwiseClone() as TextMessage;
             ClonedInstance.MessageSender = MessageSender.Clone() as User;
             ClonedInstance.WhichChatMessageSent = WhichChatMessageSent.Clone() as ChatBase;
 

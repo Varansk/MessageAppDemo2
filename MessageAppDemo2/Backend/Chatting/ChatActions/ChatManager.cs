@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatActions.ChatManagers.Interfaces;
-using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
+﻿using MessageAppDemo2.Backend.Chatting.ChatActions.ChatManagers.Interfaces;
+using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 using System;
 
-namespace MessageAppDemo.Backend.Chatting.ChatActions
+namespace MessageAppDemo2.Backend.Chatting.ChatActions
 {
     public class ChatManager
     {

@@ -1,12 +1,12 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo.Backend.SystemData.ChangeController;
-using MessageAppDemo.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
-using MessageAppDemo.Backend.SystemData.ExtensionClasses.CollectionExtensions;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
+using MessageAppDemo2.Backend.SystemData.ChangeController;
+using MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
+using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
 using System;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.ChatRepository
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.ChatRepository
 {
     public class VirtualDatabaseChatRepository : Repository<ChatBase, Guid>
     {
@@ -59,7 +59,7 @@ namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.ChatReposit
 
             if (ChangeInfo.IsChanged)
             {
-                for(int k = 0;k < ChangeInfo.AddedItems.Count;k++)
+                for (int k = 0; k < ChangeInfo.AddedItems.Count; k++)
                 {
                     _Items.Add(ChangeInfo.AddedItems[k]);
                 }

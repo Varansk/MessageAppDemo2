@@ -1,11 +1,12 @@
-﻿using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
+using MessageAppDemo2.Backend.Users.UserData;
 using System;
 
-namespace MessageAppDemo.Backend.SystemData.ChangeController
+namespace MessageAppDemo2.Backend.SystemData.ChangeController
 {
     public class UserController : BaseController<User>
     {
+     
         public override Func<User, User, bool> AddRemoveController
         {
             get

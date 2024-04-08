@@ -1,4 +1,4 @@
-﻿namespace MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections.Interfaces
+﻿namespace MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections.Interfaces
 {
     public interface IBasicDatabase
     {

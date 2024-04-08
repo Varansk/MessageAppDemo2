@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MessageAppDemo.Backend.SystemData.UploadedFile
+namespace MessageAppDemo2.Backend.SystemData.UploadedFile
 {
     public class UploadedFile<FileType> : ICloneable
     {
@@ -10,7 +10,7 @@ namespace MessageAppDemo.Backend.SystemData.UploadedFile
 
         public object Clone()
         {
-            UploadedFile<FileType> CopiedInstance = this.MemberwiseClone() as UploadedFile<FileType>;
+            UploadedFile<FileType> CopiedInstance = MemberwiseClone() as UploadedFile<FileType>;
             //FileType lar hakkında işlem yapılacak
             return CopiedInstance;
 

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -18,6 +18,10 @@
 
   <ItemGroup>
     <Resource Include="FrontEnd\Resources\Icons\Images\NoImageIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageAppWPFControlLibrary\MessageAppWPFCustomControlLibrary.csproj" />
   </ItemGroup>
 
 </Project>

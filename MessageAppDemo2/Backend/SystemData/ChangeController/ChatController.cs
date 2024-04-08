@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
-using MessageAppDemo.Backend.SystemData.ExtensionClasses.CollectionExtensions;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
+using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
 using System;
 
-namespace MessageAppDemo.Backend.SystemData.ChangeController
+namespace MessageAppDemo2.Backend.SystemData.ChangeController
 {
     public class ChatController : BaseController<ChatBase>
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.SystemData.CollectionChangeDedector.ChangeDedector
+namespace MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector
 {
     public record class ChangeInfo<ItemType>
     {

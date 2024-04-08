@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MessageAppDemo.FrontEnd.Resources.Icons {
+namespace MessageAppDemo2.FrontEnd.Resources.Icons {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MessageAppDemo.FrontEnd.Resources.Icons {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MessageAppDemo.FrontEnd.Resources.Icons.IconResources", typeof(IconResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MessageAppDemo2.FrontEnd.Resources.Icons.IconResources", typeof(IconResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

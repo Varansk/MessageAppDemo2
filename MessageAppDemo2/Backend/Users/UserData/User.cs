@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.PersonalData;
-using MessageAppDemo.Backend.StatusUpdate.Interfaces;
+﻿using MessageAppDemo2.Backend.PersonalData;
+using MessageAppDemo2.Backend.StatusUpdate.Interfaces;
 using System;
 using System.Windows.Media.Imaging;
 
-namespace MessageAppDemo.Backend.Users.UserData
+namespace MessageAppDemo2.Backend.Users.UserData
 {
     public abstract class User : ICloneable
     {
@@ -21,10 +21,11 @@ namespace MessageAppDemo.Backend.Users.UserData
         public PersonalUserLists PersonalUserLists { get; set; }
         public PersonalSettings PersonalSettings { get; set; }
         public StatusTypeProp StatusUpdate { get; set; }
+        public UserType UserType { get; set; }
 
 
         public User(Guid ID)
-        {
+        {   
             UserGUİD = ID;
             InitializeUser();
         }
@@ -40,6 +41,10 @@ namespace MessageAppDemo.Backend.Users.UserData
             PersonalSettings = new PersonalSettings();
         }
 
-        public abstract object Clone(); 
+        public abstract object Clone();
+    }
+    public enum UserType
+    {
+        Person, BlockedPerson, BusinessPerson, Admin, HighLevelAdmin
     }
 }

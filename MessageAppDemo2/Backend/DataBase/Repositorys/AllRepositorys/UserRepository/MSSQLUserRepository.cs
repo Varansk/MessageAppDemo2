@@ -1,12 +1,12 @@
-﻿using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
+using MessageAppDemo2.Backend.Users.UserData;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Data;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.UserRepository
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserRepository
 {
     public class MSSQLUserRepository : Repository<User, Guid>, IRunStoredProcedure<SqlCommand, SqlDataReader>
     {

@@ -1,23 +1,25 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Users.UserData;
 using System;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
-namespace MessageAppDemo.Backend.Chatting.ChatData
+namespace MessageAppDemo2.Backend.Chatting.ChatData
 {
 
     public class GroupChat : ChatBase
     {
         public List<User> GroupAdminUsers { get; set; }
         public string ChatName { get; set; }
+        public List<User> BlockedUsers { get; set; }
         public BitmapImage ChatPicture { get; set; }
 
         public GroupChat(Guid ChatID) : base(ChatID)
         {
-
+            GroupAdminUsers = new List<User>(); 
+            BlockedUsers = new List<User>();
         }
-        public GroupChat() : base(Guid.NewGuid())
+        public GroupChat() : this(Guid.NewGuid()) 
         {
 
         }

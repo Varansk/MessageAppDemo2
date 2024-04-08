@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.SystemData.ObjectPooler
+namespace MessageAppDemo2.Backend.SystemData.ObjectPooler
 {
     public class ObjectPoolsManager<ID, TypeofPoolObject> : IObjectPoolsManager<ID, TypeofPoolObject>
     {

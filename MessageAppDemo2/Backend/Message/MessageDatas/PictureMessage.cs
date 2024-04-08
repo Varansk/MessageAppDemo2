@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.Users.UserData;
 using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.Message.MessageDatas
+namespace MessageAppDemo2.Backend.Message.MessageDatas
 {
     public class PictureMessage : MessageBase, IHaveQuotedMessage, IHaveTextMessage, IFileUploadableMessage<PictureMessage>
     {
@@ -11,7 +11,7 @@ namespace MessageAppDemo.Backend.Message.MessageDatas
         private string _Text;
         private List<PictureMessage> _Files;
 
-        public MessageBase QuotedMessage {  get { return _QuotedMessage; } set { _QuotedMessage = value; } }     
+        public MessageBase QuotedMessage { get { return _QuotedMessage; } set { _QuotedMessage = value; } }
         public string Text { get { return _Text; } set { _Text = value; } }
         public List<PictureMessage> Files { get { return _Files; } set { _Files = value; } }
 
@@ -23,7 +23,7 @@ namespace MessageAppDemo.Backend.Message.MessageDatas
         }
         public override object Clone()
         {
-            PictureMessage ClonedInstance = this.MemberwiseClone() as PictureMessage;
+            PictureMessage ClonedInstance = MemberwiseClone() as PictureMessage;
             ClonedInstance.MessageSender = MessageSender.Clone() as User;
             ClonedInstance.WhichChatMessageSent = WhichChatMessageSent.Clone() as ChatBase;
 

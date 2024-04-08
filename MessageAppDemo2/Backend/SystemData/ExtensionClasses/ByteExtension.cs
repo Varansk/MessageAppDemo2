@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media.Imaging;
 
-namespace MessageAppDemo.Backend.SystemData.ExtensionClasses
+namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses
 {
     public static class ByteExtension
     {
@@ -10,7 +10,7 @@ namespace MessageAppDemo.Backend.SystemData.ExtensionClasses
             {
                 var image = new BitmapImage();
                 image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad; // here
+                image.CacheOption = BitmapCacheOption.OnLoad;
                 image.StreamSource = ms;
                 image.EndInit();
                 return image;

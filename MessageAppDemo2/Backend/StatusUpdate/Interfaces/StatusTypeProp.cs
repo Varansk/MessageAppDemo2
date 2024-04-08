@@ -1,7 +1,7 @@
-﻿using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Users.UserData;
 using System;
 
-namespace MessageAppDemo.Backend.StatusUpdate.Interfaces
+namespace MessageAppDemo2.Backend.StatusUpdate.Interfaces
 {
     public abstract class StatusTypeProp : ICloneable
     {

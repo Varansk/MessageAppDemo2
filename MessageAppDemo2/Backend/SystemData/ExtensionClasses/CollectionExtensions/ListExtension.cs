@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
+﻿using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MessageAppDemo.Backend.SystemData.ExtensionClasses.CollectionExtensions
+namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions
 {
     public static class ListExtension
     {

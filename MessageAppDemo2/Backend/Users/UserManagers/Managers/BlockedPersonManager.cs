@@ -1,21 +1,21 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
-using MessageAppDemo.Backend.DataBase.Repositorys;
-using MessageAppDemo.Backend.SystemData.ChangeController;
-using MessageAppDemo.Backend.SystemData.ExtensionClasses.CollectionExtensions;
-using MessageAppDemo.Backend.Users.UserData;
-using MessageAppDemo.Backend.Users.UserManagers.Managers.Interfaces;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
+using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.SystemData.ChangeController;
+using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
+using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserManagers.Managers.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.Users.UserManagers.Managers
+namespace MessageAppDemo2.Backend.Users.UserManagers.Managers
 {
     public class BlockedPersonManager : IUserManager<BlockedPerson, Guid>
     {
         public void Add(BlockedPerson Item)
         {
             DatabaseRepository<User, Guid> UserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
-            
+
             UserRepository.Add(Item);
 
             DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(UserRepository);

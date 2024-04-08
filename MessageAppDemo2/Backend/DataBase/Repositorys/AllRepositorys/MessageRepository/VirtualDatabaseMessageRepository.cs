@@ -1,14 +1,14 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces;
-using MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.SystemData.ChangeController;
-using MessageAppDemo.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
-using MessageAppDemo.Backend.SystemData.ExtensionClasses.CollectionExtensions;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.SystemData.ChangeController;
+using MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
+using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
 using System;
-
-namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.MessageRepository
+using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRepository
 {
     public class VirtualDatabaseMessageRepository : Repository<MessageBase, int>, IChatSelector
     {
@@ -22,7 +22,7 @@ namespace MessageAppDemo.Backend.DataBase.Repositorys.AllRepositorys.MessageRepo
         }
         public void SetDependentChat(ChatBase Chat)
         {
-            this.dependentChat = Chat;
+            dependentChat = Chat;
         }
 
 

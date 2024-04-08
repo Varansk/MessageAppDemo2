@@ -1,4 +1,4 @@
-﻿namespace MessageAppDemo.Backend.SystemData.FakeDataCreator
+﻿namespace MessageAppDemo2.Backend.SystemData.FakeDataCreator
 {
     public interface IFaker<Item>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
-namespace MessageAppDemo.Backend.SystemData.ObjectPooler
+namespace MessageAppDemo2.Backend.SystemData.ObjectPooler
 {
     public class ObjectPool<T> : IObjectPooler<T>
     {

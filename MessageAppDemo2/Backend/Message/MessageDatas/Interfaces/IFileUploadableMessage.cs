@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace MessageAppDemo.Backend.Message.MessageDatas.Interfaces
+namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
 {
     public interface IFileUploadableMessage<FileType>
     {
         List<FileType> Files { get; set; }
     }
 }
-    

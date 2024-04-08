@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MessageAppDemo.Backend.SystemData.BasicCRUDSupport
+namespace MessageAppDemo2.Backend.SystemData.BasicCRUDSupport
 {
     public interface IBasicCrudSupport<Item, ID>
     {

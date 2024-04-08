@@ -1,10 +1,12 @@
-﻿using MessageAppDemo.Backend.SystemData.ExtensionClasses;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
+using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.SystemData.ExtensionClasses;
+using MessageAppDemo2.Backend.Users.UserData;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace MessageAppDemo.Backend.ValueChecksAndControls
+namespace MessageAppDemo2.Backend.ValueChecksAndControls
 {
 
     public static class UserValueChecks
@@ -29,6 +31,62 @@ namespace MessageAppDemo.Backend.ValueChecksAndControls
         }
 
         #region Methods Accessible By User
+
+        public static bool IsThisNumberExists(User User)
+        {
+            return IsThisNumberExists(User.PhoneNumber);
+        }
+
+        public static bool IsThisNumberExists(string PhoneNumber)
+        {
+            DatabaseRepository<User, Guid> databaseRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            User User = null;
+
+            if (CheckPhoneNumber(PhoneNumber))
+            {
+                User = databaseRepository.GetSingle(I => I.PhoneNumber == PhoneNumber);
+            }
+
+
+            return User != null ? true : false;
+
+        }
+
+
+
+
+        public static User FindUser(User User)
+        {
+            if (User is not null)
+            {
+                return FindUser(User.PhoneNumber, User.Password);
+            }
+            return null;
+        }
+        public static User FindUser(string PhoneNumber, string Password)
+        {
+            DatabaseRepository<User, Guid> databaseRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            if (CheckPhoneNumber(PhoneNumber) && CheckPassword(Password))
+            {
+                User User = databaseRepository.GetSingle(I =>
+                {
+                    return I.PhoneNumber == ValueFormatter.FormatPhoneNumber(PhoneNumber) && Password.Trim() == I.Password;
+                });
+
+                DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseRepository);
+                return User;
+            }
+            else
+            {
+                DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseRepository);
+                return null;
+            }
+
+        }
+
+
         public static bool CheckName(string Name)
         {
             if (CheckString(Name, "", 2, 25, WhiteSpaceOptions.ReduceMultipleSpacesToOneAndTrim, StringControlTypes.IsLetter))
@@ -57,12 +115,16 @@ namespace MessageAppDemo.Backend.ValueChecksAndControls
 
         public static bool CheckPhoneNumber(string PhoneNumber)
         {
-            PhoneNumber = PhoneNumber.Trim()
+            if (!string.IsNullOrWhiteSpace(PhoneNumber))
+            {
+                PhoneNumber = PhoneNumber.Trim()
                     .Replace(" ", "")
                     .Replace("-", "")
                     .Replace("(", "")
                     .Replace(")", "");
-            return Regex.Match(PhoneNumber, @"^\+\d{5,15}$").Success;
+                return Regex.Match(PhoneNumber, @"^\s*[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})\s*$").Success;
+            }
+            return false;
 
         }
         public static bool CheckPhoneNumber(User User)

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Media.Imaging;
 
-namespace MessageAppDemo.Backend.PersonalData
+namespace MessageAppDemo2.Backend.PersonalData
 {
 
     public class PersonalSettings : ICloneable
@@ -11,11 +11,11 @@ namespace MessageAppDemo.Backend.PersonalData
 
         public PersonalSettings()
         {
-            
+
         }
         public object Clone()
         {
-            PersonalSettings ClonedInstance = this.MemberwiseClone() as PersonalSettings;
+            PersonalSettings ClonedInstance = MemberwiseClone() as PersonalSettings;
             ClonedInstance.BackGroundPicture = BackGroundPicture.Clone() as BitmapImage;
 
             return ClonedInstance;

@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
+﻿using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
 {
     public abstract class Repository<Item, ID> : IRepository<Item, ID> where Item : class
     {
@@ -53,7 +53,10 @@ namespace MessageAppDemo.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
                 if (Controller.AddRemoveController.Invoke(item, Item) && !Controller.UpdateController.Invoke(Item, item))
                 {
                     ChangesToBeMade.Invoke(item);
-                    ChangesToBeMade.Invoke(Item);
+                    if (Item != item)
+                    {
+                        ChangesToBeMade.Invoke(Item);
+                    }             
                 }
             }
         }

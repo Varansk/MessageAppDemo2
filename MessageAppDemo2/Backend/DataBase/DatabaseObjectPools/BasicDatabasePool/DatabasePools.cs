@@ -1,7 +1,7 @@
-﻿using MessageAppDemo.Backend.DataBase.Connections;
-using MessageAppDemo.Backend.SystemData.ObjectPooler;
+﻿using MessageAppDemo2.Backend.DataBase.Connections;
+using MessageAppDemo2.Backend.SystemData.ObjectPooler;
 
-namespace MessageAppDemo.Backend.DataBase.DatabaseObjectPools.BasicDatabasePool
+namespace MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.BasicDatabasePool
 {
     public static class DatabasePools
     {

@@ -1,13 +1,13 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
-using MessageAppDemo.Backend.DataBase.Repositorys;
-using MessageAppDemo.Backend.Message.MessageActions.MessageDataManagers.Interfaces;
-using MessageAppDemo.Backend.Message.MessageDatas;
-using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.SystemData.ChangeController;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
+using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers.Interfaces;
+using MessageAppDemo2.Backend.Message.MessageDatas;
+using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.SystemData.ChangeController;
 using System;
 
-namespace MessageAppDemo.Backend.Message.MessageActions.MessageDataManagers
+namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
 {
     public class VoiceMessageManager : IMessageManager<VoiceMessage, int>
     {

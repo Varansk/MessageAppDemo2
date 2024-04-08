@@ -1,8 +1,8 @@
-﻿using MessageAppDemo.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
+﻿using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
 using System;
 
-namespace MessageAppDemo.Backend.SystemData.ChangeController
+namespace MessageAppDemo2.Backend.SystemData.ChangeController
 {
     public class MessageController : BaseController<MessageBase>
     {

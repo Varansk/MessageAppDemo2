@@ -1,4 +1,4 @@
-﻿namespace MessageAppDemo.Backend.SystemData.ExtensionClasses
+﻿namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses
 {
     public static class IntExtension
     {

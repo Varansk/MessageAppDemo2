@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.DataBase.Repositorys;
-using MessageAppDemo.Backend.SystemData.ObjectPooler;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.SystemData.ObjectPooler;
 using System;
 
-namespace MessageAppDemo.Backend.DataBase.DatabaseObjectPools.RepositoryPools
+namespace MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools
 {
     public static class DatabaseChatRepositoryPools
     {

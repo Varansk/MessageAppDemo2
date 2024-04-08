@@ -1,6 +1,6 @@
-﻿using MessageAppDemo.Backend.DataBase.Connections.DataBaseConnections.Interfaces;
+﻿using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections.Interfaces;
 
-namespace MessageAppDemo.Backend.DataBase.Connections
+namespace MessageAppDemo2.Backend.DataBase.Connections
 {
     public class DataBaseConnect
     {

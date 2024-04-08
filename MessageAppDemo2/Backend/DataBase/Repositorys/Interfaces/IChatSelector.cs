@@ -1,6 +1,6 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 
-namespace MessageAppDemo.Backend.DataBase.Repositorys.Interfaces
+namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces
 {
     public interface IChatSelector
     {

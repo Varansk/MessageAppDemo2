@@ -1,7 +1,7 @@
-﻿using MessageAppDemo.Backend.SystemData.ObjectPooler;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.SystemData.ObjectPooler;
+using MessageAppDemo2.Backend.Users.UserData;
 
-namespace MessageAppDemo.Backend.Login_SignUp
+namespace MessageAppDemo2.Backend.Login_SignUp
 {
     public static class LoggedUserPool
     {

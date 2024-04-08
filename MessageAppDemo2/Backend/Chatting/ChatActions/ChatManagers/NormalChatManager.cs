@@ -1,13 +1,13 @@
-﻿using MessageAppDemo.Backend.Chatting.ChatActions.ChatManagers.Interfaces;
-using MessageAppDemo.Backend.Chatting.ChatData;
-using MessageAppDemo.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo.Backend.Chatting.ChatUserActions;
-using MessageAppDemo.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
-using MessageAppDemo.Backend.DataBase.Repositorys;
-using MessageAppDemo.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Chatting.ChatActions.ChatManagers.Interfaces;
+using MessageAppDemo2.Backend.Chatting.ChatData;
+using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.Chatting.ChatUserActions;
+using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
+using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.Users.UserData;
 using System;
 
-namespace MessageAppDemo.Backend.Chatting.ChatActions.ChatManagers
+namespace MessageAppDemo2.Backend.Chatting.ChatActions.ChatManagers
 {
     public class NormalChatManager : IChatManager<NormalChat, Guid>
     {
@@ -17,7 +17,7 @@ namespace MessageAppDemo.Backend.Chatting.ChatActions.ChatManagers
             DatabaseRepository<User, Guid> UserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
 
             NormalChatUserManager NormalChatUserManager = new();
-                
+
             ChatRepository.Add(Item);
 
             foreach (User Useritem in Item.ChatUsers)

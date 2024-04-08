@@ -1,9 +1,9 @@
-﻿using MessageAppDemo.Backend.SystemData.ChangeController.Interfaces;
-using MessageAppDemo.Backend.SystemData.CollectionChangeDedector.ChangeDedector.Interfaces;
+﻿using MessageAppDemo2.Backend.SystemData.ChangeController.Interfaces;
+using MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MessageAppDemo.Backend.SystemData.CollectionChangeDedector.ChangeDedector
+namespace MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector
 {
     public class ListChangesDedector<ItemType> : ICollectionChangeDedector<ItemType>
     {
