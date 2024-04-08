@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MessageAppWPFCustomControlLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb4668324fbfeb480f4eeb6a4229212e50026a6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4570ca061658918d7149f8db1b2fec47c2c1e0c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MessageAppWPFCustomControlLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MessageAppWPFCustomControlLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
