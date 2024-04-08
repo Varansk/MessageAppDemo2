@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MessageAppDemo2.Backend.Users.UserUserManager.Interfaces
 {
-    public interface IAdminUserManager : IUserUserManager
+    public interface IAdminUserManager : IUserUserManager<Admin>
     {
-        void BanUser(User Banner, User Banned, BanInformation Information);
-        void UnBanUser(User Banner, User Banned);
+        void BanUser(Admin Banner, User Banned, BanInformation Information);
+        void UnBanUser(Admin Banner, User Banned);
     }
 }

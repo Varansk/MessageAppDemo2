@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace MessageAppDemo2.Backend.Users.UserUserManager.Interfaces
 {
-    public interface IUserUserManager
+    public interface IUserUserManager<UserType> where UserType : User
     {
-        void BlockUser(User Blocker, User Blocked);
-        void UnBlockUser(User Blocker, User Blocked);
-        void AddFriend(User User1, User User2);
-        void RemoveFriend(User User1, User User2);
+        void BlockUser(UserType Blocker, User Blocked);
+        void UnBlockUser(UserType Blocker, User Blocked);
+        void AddFriend(UserType User1, User User2);
+        void RemoveFriend(UserType User1, User User2);
+        void Report(UserType Reporter);
     }
-}
+}   

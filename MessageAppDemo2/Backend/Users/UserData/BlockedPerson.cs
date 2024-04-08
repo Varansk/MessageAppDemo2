@@ -1,4 +1,6 @@
 ﻿using MessageAppDemo2.Backend.PersonalData;
+using MessageAppDemo2.Backend.SystemData.Enums;
+using Microsoft.Identity.Client;
 using System;
 
 namespace MessageAppDemo2.Backend.Users.UserData
@@ -10,9 +12,9 @@ namespace MessageAppDemo2.Backend.Users.UserData
         {
             this.UserType = UserType.BlockedPerson;
         }
-        public BlockedPerson() : base(Guid.NewGuid())
+        public BlockedPerson() : this(Guid.NewGuid())
         {
-            this.UserType = UserType.BlockedPerson;
+
         }
         public override object Clone()
         {
@@ -24,16 +26,12 @@ namespace MessageAppDemo2.Backend.Users.UserData
             return ClonedInstance;
         }
 
-        public BanInformation BanInformation { get; set; }  
+        public BanInformation BanInformation { get; set; }
         public User BannedUserAccount { get; set; }
     }
-    [Flags] 
-    public enum BanLevel
-    {
-        VeryLow = 1, Low, Medium, High, VeryHigh
-    }
 
-    public record struct BanInformation(string BanDetail, int BanHour, BanLevel BanLevel)
+    
+    public record struct BanInformation(string BanDetail, int BanHour, Level BanLevel, User WhoBanned)
     {
 
     }
