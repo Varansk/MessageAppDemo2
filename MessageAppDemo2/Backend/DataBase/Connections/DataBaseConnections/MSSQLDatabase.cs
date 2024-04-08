@@ -8,6 +8,7 @@ namespace MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections
         private SqlConnection con;
         private SqlCommand cmd;
         private SqlDataReader reader;
+        //
 
         public SqlConnection GetConnection
         {
