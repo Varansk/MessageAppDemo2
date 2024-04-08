@@ -11,6 +11,6 @@ namespace MessageAppDemo2.Backend.ReportSystem
 {
     public record class UserReportDetails(User Reported, Level ReportLevel, string ReportReason) : IReport
     {
-
+        
     }
 }
