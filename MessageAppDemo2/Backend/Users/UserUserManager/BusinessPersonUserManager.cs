@@ -19,20 +19,25 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
         public bool AddFriend(BusinessPerson User1, User User2)
         {
             DatabaseRepository<User, Guid> userRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
             if (User1 is null || User2 is null)
             {
                 return false;
             }
-            if ((User1.PersonalUserLists.BlockedByUsers.Contains(User2, userController) && User1.PersonalUserLists.BlockedPersons.Contains(User2, userController)) || (User2.PersonalUserLists.BlockedPersons.Contains(User1, userController) && User2.PersonalUserLists.BlockedByUsers.Contains(User1, userController)))
+
+            if ((User1.PersonalUserLists.BlockedByUsers.Contains(User2, userController) && User2.PersonalUserLists.BlockedPersons.Contains(User1, userController)) || (User1.PersonalUserLists.BlockedPersons.Contains(User2, userController) && User2.PersonalUserLists.BlockedByUsers.Contains(User1, userController)))
             {
                 return false;
             }
+
             if (User1.PersonalUserLists.ListOfSavedUsers.Contains(User2, userController) || User2.PersonalUserLists.ListOfSavedUsers.Contains(User1, userController))
             {
                 return false;
             }
+
             User1.PersonalUserLists.ListOfSavedUsers.Add(User2);
             User2.PersonalUserLists.ListOfSavedUsers.Add(User1);
+
             if (!(userRepository.GetByID(User1.UserGUİD).PersonalUserLists.ListOfSavedUsers.Contains(User2, userController)))
             {
                 userRepository.UpdateWithPatch(User1.UserGUİD, (I) => { I.PersonalUserLists.ListOfSavedUsers.Add(User2); });
@@ -50,12 +55,71 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
 
         public bool BlockUser(BusinessPerson Blocker, User Blocked)
         {
-            throw new NotImplementedException();
+            DatabaseRepository<User, Guid> userRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            if (Blocker is null || Blocked is null)
+            {
+                return false;
+            }
+
+            if (Blocker.PersonalUserLists.BlockedPersons.Contains(Blocked, userController) && Blocked.PersonalUserLists.BlockedByUsers.Contains(Blocker, userController))
+            {
+                return false;
+            }
+
+            if (Blocker.PersonalUserLists.ListOfSavedUsers.Contains(Blocked, userController) || Blocked.PersonalUserLists.ListOfSavedUsers.Contains(Blocker, userController))
+            {
+                RemoveFriend(Blocker, Blocked);
+            }
+
+            Blocker.PersonalUserLists.BlockedPersons.Add(Blocked);
+            Blocked.PersonalUserLists.BlockedByUsers.Add(Blocker);
+
+            if (!(userRepository.GetByID(Blocker.UserGUİD).PersonalUserLists.BlockedPersons.Contains(Blocked, userController)))
+            {
+                userRepository.UpdateWithPatch(Blocker.UserGUİD, (I) => { I.PersonalUserLists.BlockedPersons.Add(Blocked); });
+            }
+
+            if (!(userRepository.GetByID(Blocked.UserGUİD).PersonalUserLists.BlockedByUsers.Contains(Blocker, userController)))
+            {
+                userRepository.UpdateWithPatch(Blocked.UserGUİD, (I) => { I.PersonalUserLists.BlockedByUsers.Add(Blocker); });
+            }
+
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(userRepository);
+
+            return true;
         }
 
         public bool RemoveFriend(BusinessPerson User1, User User2)
         {
-            throw new NotImplementedException();
+            DatabaseRepository<User, Guid> userRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            if (User1 is null || User2 is null)
+            {
+                return false;
+            }
+
+            if (!User1.PersonalUserLists.ListOfSavedUsers.Contains(User2, userController) || !User2.PersonalUserLists.ListOfSavedUsers.Contains(User1, userController))
+            {
+                return false;
+            }
+
+            User1.PersonalUserLists.ListOfSavedUsers.Remove(User2, userController);
+            User2.PersonalUserLists.ListOfSavedUsers.Remove(User1, userController);
+
+            if (userRepository.GetByID(User1.UserGUİD).PersonalUserLists.ListOfSavedUsers.Contains(User2, userController))
+            {
+                userRepository.UpdateWithPatch(User1.UserGUİD, (I) => { I.PersonalUserLists.ListOfSavedUsers.Remove(User2, userController); });
+            }
+
+            if (userRepository.GetByID(User2.UserGUİD).PersonalUserLists.ListOfSavedUsers.Contains(User1, userController))
+            {
+                userRepository.UpdateWithPatch(User2.UserGUİD, (I) => { I.PersonalUserLists.ListOfSavedUsers.Remove(User1, userController); });
+            }
+
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(userRepository);
+
+            return true;
         }
 
         public bool Report(UserReportDetails ReportDetails)
@@ -65,7 +129,34 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
 
         public bool UnBlockUser(BusinessPerson Blocker, User Blocked)
         {
-            throw new NotImplementedException();
+            DatabaseRepository<User, Guid> userRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            if (Blocker is null || Blocked is null)
+            {
+                return false;
+            }
+
+            if (!Blocker.PersonalUserLists.BlockedPersons.Contains(Blocked, userController) && !Blocked.PersonalUserLists.BlockedByUsers.Contains(Blocker, userController))
+            {
+                return false;
+            }
+
+            Blocker.PersonalUserLists.BlockedPersons.Remove(Blocked, userController);
+            Blocked.PersonalUserLists.BlockedByUsers.Remove(Blocker, userController);
+
+            if (userRepository.GetByID(Blocker.UserGUİD).PersonalUserLists.BlockedPersons.Contains(Blocked, userController))
+            {
+                userRepository.UpdateWithPatch(Blocker.UserGUİD, (I) => { I.PersonalUserLists.BlockedPersons.Remove(Blocked, userController); });
+            }
+
+            if (userRepository.GetByID(Blocked.UserGUİD).PersonalUserLists.BlockedByUsers.Contains(Blocker, userController))
+            {
+                userRepository.UpdateWithPatch(Blocked.UserGUİD, (I) => { I.PersonalUserLists.BlockedByUsers.Remove(Blocker, userController); });
+            }
+
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(userRepository);
+
+            return true;
         }
     }
 }

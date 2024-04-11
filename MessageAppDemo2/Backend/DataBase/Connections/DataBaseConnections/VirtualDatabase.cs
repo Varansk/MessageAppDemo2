@@ -13,7 +13,7 @@ namespace MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections
     {
         private List<User> Users;
         private List<ChatBase> Chats;
-        private List<MessageBase> Messages;
+        private List<MessageBase> Messages; 
 
 
         private object UsersLockConnection;

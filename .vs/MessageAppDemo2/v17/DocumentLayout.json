@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\personusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\personusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\highleveladminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\highleveladminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\adminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\adminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\businesspersonusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\businesspersonusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\adminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\adminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\personusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\personusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\interfaces\\iadminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\interfaces\\iadminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\database\\connections\\databaseconnections\\virtualdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\database\\connections\\databaseconnections\\virtualdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\database\\connections\\databaseconnections\\mssqldatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\database\\connections\\databaseconnections\\mssqldatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\highleveladminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\highleveladminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\interfaces\\ihighleveladminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,20 +43,12 @@
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\interfaces\\iuserusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\users\\userusermanager\\interfaces\\iadminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\users\\userusermanager\\interfaces\\iadminusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\chatting\\chatdata\\groupchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\chatting\\chatdata\\groupchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\chatting\\chatdata\\interfaces\\chatbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\chatting\\chatdata\\interfaces\\chatbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,6 +95,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "MSSQLDatabase.cs",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\MSSQLDatabase.cs",
+              "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\MSSQLDatabase.cs",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\MSSQLDatabase.cs",
+              "RelativeToolTip": "MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\MSSQLDatabase.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAgwCQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:53:10.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VirtualDatabase.cs",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\VirtualDatabase.cs",
+              "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\VirtualDatabase.cs",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\VirtualDatabase.cs",
+              "RelativeToolTip": "MessageAppDemo2\\Backend\\DataBase\\Connections\\DataBaseConnections\\VirtualDatabase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:52:59.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "IUserUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IUserUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IUserUserManager.cs",
@@ -94,25 +128,24 @@
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IUserUserManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T17:18:21.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T17:18:21.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "IAdminUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IAdminUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IAdminUserManager.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IAdminUserManager.cs",
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IAdminUserManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T16:43:12.325Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IHighLevelAdminUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IHighLevelAdminUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IHighLevelAdminUserManager.cs",
@@ -120,77 +153,76 @@
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\Interfaces\\IHighLevelAdminUserManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T16:43:38.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T16:43:38.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PersonUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\PersonUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\PersonUserManager.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\PersonUserManager.cs",
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\PersonUserManager.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAQwIoAAAAAAAAA",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAgwH8AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T16:47:46.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "AdminUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\AdminUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\AdminUserManager.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\AdminUserManager.cs",
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\AdminUserManager.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAkwBwAAAANAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAQwDcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T16:41:52.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "BusinessPersonUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\BusinessPersonUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\BusinessPersonUserManager.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\BusinessPersonUserManager.cs",
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\BusinessPersonUserManager.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAcwBEAAABFAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAwwJ4AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T16:42:38.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "HighLevelAdminUserManager.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\HighLevelAdminUserManager.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\HighLevelAdminUserManager.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Users\\UserUserManager\\HighLevelAdminUserManager.cs",
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Users\\UserUserManager\\HighLevelAdminUserManager.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAcwBAAAAAFAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T16:43:07.349Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\App.xaml.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\App.xaml.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\App.xaml.cs",
               "RelativeToolTip": "MessageAppDemo2\\App.xaml.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAQwEEAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T18:23:33.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "ChatBase.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Chatting\\ChatData\\Interfaces\\ChatBase.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Chatting\\ChatData\\Interfaces\\ChatBase.cs",
@@ -198,12 +230,11 @@
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Chatting\\ChatData\\Interfaces\\ChatBase.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T18:14:47.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T18:14:47.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "GroupChat.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Chatting\\ChatData\\GroupChat.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Chatting\\ChatData\\GroupChat.cs",
@@ -211,8 +242,7 @@
               "RelativeToolTip": "MessageAppDemo2\\Backend\\Chatting\\ChatData\\GroupChat.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T18:14:41.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T18:14:41.499Z"
             }
           ]
         }
