@@ -8,10 +8,10 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData.Interfaces
 
     public abstract class ChatBase : ICloneable
     {
-        public Guid ChatID { get; init; }
+        public Guid ChatID { get; init; } 
         public List<MessageBase> Messages { get; set; }
         public List<User> ChatUsers { get; set; }       
-        public string ChatDetails { get; set; }
+        public string ChatDetails { get; set; } 
         private ChatBase()
         {
             Messages = new List<MessageBase>();

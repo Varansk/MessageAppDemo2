@@ -9,8 +9,18 @@ using System.Threading.Tasks;
 
 namespace MessageAppDemo2.Backend.ReportSystem
 {
-    public record class UserReportDetails(User Reported, Level ReportLevel, string ReportReason) : IReport
+    public record class UserReportDetails : IReport
     {
-        
+        public User Reporter { get; init; }
+        public User Reported { get; init; }
+        public Level ReportLevel { get; init; }
+        public string ReportReason { get; init; }
+        public UserReportDetails(User Reporter, User Reported, Level ReportLevel, string ReportReason)
+        {
+            this.Reporter = Reporter;
+            this.Reported = Reported;
+            this.ReportLevel = ReportLevel;
+            this.ReportReason = ReportReason;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager.Interfaces
 {
     public interface IAdminUserManager : IUserUserManager<Admin>
     {
-        void BanUser(Admin Banner, User Banned, BanInformation Information);
-        void UnBanUser(Admin Banner, User Banned);
+        bool BanUser(Admin Banner, User Banned, BanInformation Information);
+        bool UnBanUser(Admin Banner, User Banned);
     }
 }

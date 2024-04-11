@@ -61,8 +61,10 @@ namespace MessageAppDemo2
 
             Admin p4 = new Admin() { PhoneNumber = "5510115045", Password = "Eren2007!adam", BirthDay = new DateTime(2000, 11, 18), Email = "erenkıyak@gmail.com", FirstRegisteredDay = DateTime.Now, Name = "Eren", LastName = "Kıyak", ProfilePicture = IconResources.NoImageIcon.ToImage(), UserGUİD = Guid.NewGuid(), UserSignature = "ben eren", UserType = UserType.Admin };
 
+
             
 
+            
            
 
 
