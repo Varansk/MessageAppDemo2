@@ -7,25 +7,25 @@ namespace MessageAppDemo2.Backend.Users.UserData
 {
     public abstract class User : ICloneable
     {
-        public Guid UserGUİD { get; init; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string UserSignature { get; set; }
-        public BitmapImage ProfilePicture { get; set; }
-        public DateTime BirthDay { get; set; }
-        public DateTime FirstRegisteredDay { get; set; }
-        public PersonalChatList PersonalChatList { get; set; }
-        public PersonalUserLists PersonalUserLists { get; set; }
-        public PersonalSettings PersonalSettings { get; set; }
-        public StatusTypeProp StatusUpdate { get; set; }
-        public UserType UserType { get; set; }
+        public virtual Guid UserGUİD { get; init; }
+        public virtual string Name { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual string PhoneNumber { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string UserSignature { get; set; }
+        public virtual BitmapImage ProfilePicture { get; set; }
+        public virtual DateTime BirthDay { get; set; }
+        public virtual DateTime FirstRegisteredDay { get; set; }
+        public virtual PersonalChatList PersonalChatList { get; set; }
+        public virtual PersonalUserLists PersonalUserLists { get; set; }
+        public virtual PersonalSettings PersonalSettings { get; set; }
+        public virtual StatusTypeProp StatusUpdate { get; set; }
+        public virtual UserType UserType { get; set; }
 
 
         public User(Guid ID)
-        {   
+        {
             UserGUİD = ID;
             InitializeUser();
         }

@@ -54,8 +54,6 @@ namespace MessageAppDemo2.Backend.ValueChecksAndControls
         }
 
 
-
-
         public static User FindUser(User User)
         {
             if (User is not null)

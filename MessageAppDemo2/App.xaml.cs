@@ -8,8 +8,10 @@ using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
 using MessageAppDemo2.Backend.DataBase.Repositorys;
 using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.ChatRepository;
 using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRepository;
+using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.ReportRepository;
 using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserRepository;
 using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.ReportSystem.Interfaces;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses;
 using MessageAppDemo2.Backend.Users.UserData;
 using MessageAppDemo2.Backend.Users.UserManagers;
@@ -33,6 +35,7 @@ namespace MessageAppDemo2
             VirtualDatabaseUserRepository virtualDatabaseUserRepository = new(virtualDatabase);
             VirtualDatabaseChatRepository virtualDatabaseChatRepository = new(virtualDatabase);
             VirtualDatabaseMessageRepository virtualDatabaseMessageRepository = new(virtualDatabase, null);
+            VirtualDatabaseReportRepository virtualDatabaseReportRepository = new(virtualDatabase);
             #endregion
 
             #region BasicDatabasePoolActions
@@ -48,13 +51,16 @@ namespace MessageAppDemo2
 
             DatabaseRepository<MessageBase, int> MessageRepository = new(virtualDatabaseMessageRepository);
             MessageRepository.AddToDatabaseMessageRepositoryPool("DTBR");
+
+            DatabaseRepository<ReportBase,Guid> ReportRepository = new(virtualDatabaseReportRepository);
+            ReportRepository.AddToDatabaseReportRepositoryPool("DTBR");
             #endregion
 
 
             #region TestArea
 
            
-
+            
 
             
 

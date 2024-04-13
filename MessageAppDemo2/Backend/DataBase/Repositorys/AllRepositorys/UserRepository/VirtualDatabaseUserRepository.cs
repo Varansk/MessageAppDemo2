@@ -25,10 +25,12 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserReposi
 
         public override void SaveAllChanges()
         {
+            UserController userController = new UserController();
+
             virtualDatabase.OpenConnection();
             ListChangesDedector<User> ChangeDedector = new();
 
-            ChangeInfo<User> ChangeInfo = ChangeDedector.GetChanges(new UserController(), virtualDatabase.UserList, _Items);
+            ChangeInfo<User> ChangeInfo = ChangeDedector.GetChanges(userController, virtualDatabase.UserList, _Items);
 
             if (ChangeInfo.IsChanged)
             {
@@ -39,12 +41,12 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserReposi
 
                 for (int i = 0; i < ChangeInfo.RemovedItems.Count; i++)
                 {
-                    virtualDatabase.UserList.RemoveAt(virtualDatabase.UserList.IndexOf(ChangeInfo.RemovedItems[i], new UserController()));
+                    virtualDatabase.UserList.RemoveAt(virtualDatabase.UserList.IndexOf(ChangeInfo.RemovedItems[i], userController));
                 }
                 for (int v = 0; v < ChangeInfo.UpdatedItems.Count; v++)
                 {
                     virtualDatabase.UserList
-                        [virtualDatabase.UserList.IndexOf(ChangeInfo.UpdatedItems[v], new UserController())] = ChangeInfo.UpdatedItems[v];
+                        [virtualDatabase.UserList.IndexOf(ChangeInfo.UpdatedItems[v], userController)] = ChangeInfo.UpdatedItems[v];
                 }
             }
 
@@ -54,10 +56,12 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserReposi
 
         public override void UpdateVirtualList()
         {
+            UserController userController = new UserController();
+
             virtualDatabase.OpenConnection();
             ListChangesDedector<User> ChangeDedector = new();
 
-            ChangeInfo<User> ChangeInfo = ChangeDedector.GetChanges(new UserController(), _Items, virtualDatabase.UserList);
+            ChangeInfo<User> ChangeInfo = ChangeDedector.GetChanges(userController, _Items, virtualDatabase.UserList);
 
             if (ChangeInfo.IsChanged)
             {
@@ -68,11 +72,11 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserReposi
 
                 for (int i = 0; i < ChangeInfo.RemovedItems.Count; i++)
                 {
-                    _Items.RemoveAt(_Items.IndexOf(ChangeInfo.RemovedItems[i], new UserController()));
+                    _Items.RemoveAt(_Items.IndexOf(ChangeInfo.RemovedItems[i], userController));
                 }
                 for (int v = 0; v < ChangeInfo.UpdatedItems.Count; v++)
                 {
-                    _Items[ChangeInfo.UpdatedItems.IndexOf(ChangeInfo.UpdatedItems[v], new UserController())] = ChangeInfo.UpdatedItems[v];
+                    _Items[ChangeInfo.UpdatedItems.IndexOf(ChangeInfo.UpdatedItems[v], userController)] = ChangeInfo.UpdatedItems[v];
                 }
             }
 
