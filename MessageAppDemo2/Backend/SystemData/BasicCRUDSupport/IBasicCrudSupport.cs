@@ -2,7 +2,7 @@
 
 namespace MessageAppDemo2.Backend.SystemData.BasicCRUDSupport
 {
-    public interface IBasicCrudSupport<Item, ID>
+    public interface IBasicCrudSupport<Item,  ID>
     {
         void Add(Item Item);
         void Remove(ID ID);

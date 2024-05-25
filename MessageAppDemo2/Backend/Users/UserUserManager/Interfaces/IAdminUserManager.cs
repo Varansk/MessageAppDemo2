@@ -1,4 +1,5 @@
 ﻿using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MessageAppDemo2.Backend.Users.UserUserManager.Interfaces
 {
-    public interface IAdminUserManager : IUserUserManager<Admin>
+    public interface IAdminUserManager<AdminType> : IUserUserManager<Admin> where AdminType : IAdmin
     {
-        bool BanUser(Admin Banner, User Banned, BanInformation Information);
-        bool UnBanUser(Admin Banner, User Banned);
+        bool BanUser(AdminType Banner, User Banned, BanInformation Information);
+        bool UnBanUser(AdminType Banner, BlockedPerson Banned);
     }
 }

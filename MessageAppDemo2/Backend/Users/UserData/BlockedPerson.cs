@@ -1,6 +1,7 @@
 ﻿using MessageAppDemo2.Backend.PersonalData;
 using MessageAppDemo2.Backend.StatusUpdate.Interfaces;
 using MessageAppDemo2.Backend.SystemData.Enums;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using Microsoft.Identity.Client;
 using System;
 using System.Windows.Media.Imaging;
@@ -10,18 +11,16 @@ namespace MessageAppDemo2.Backend.Users.UserData
 
     public class BlockedPerson : User
     {
-        public BlockedPerson(Guid ID) : base(ID)
+        private BlockedPerson(User Banned, BanInformation Information, Guid ID) : base(ID, false)
         {
             this.UserType = UserType.BlockedPerson;
-        }
-        public BlockedPerson() : this(Guid.NewGuid())
-        {
-
-        }
-        public BlockedPerson(User BlockedPersonsAccount, BanInformation Information) : this(BlockedPersonsAccount.UserGUİD)
-        {
-            this.BannedUserAccount = BlockedPersonsAccount;
+            this.BannedUserAccount = Banned;
             this.BanInformation = Information;
+            InitializeUser();
+        }
+
+        public BlockedPerson(User BlockedPersonsAccount, BanInformation Information) : this(BlockedPersonsAccount, Information, BlockedPersonsAccount.UserGUİD)
+        {
 
         }
         public override object Clone()

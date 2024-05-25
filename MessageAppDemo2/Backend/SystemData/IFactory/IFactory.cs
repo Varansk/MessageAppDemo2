@@ -25,7 +25,7 @@ namespace MessageAppDemo2.Backend.SystemData.IFactory
             {
                 if (pair.Key.ToString() == type.ToString())
                 {
-                    return Activator.CreateInstance(pair.Value) as BaseType;
+                    return (BaseType)Activator.CreateInstance(pair.Value);
                 }
             }
             throw new ArgumentException("Value not found.");

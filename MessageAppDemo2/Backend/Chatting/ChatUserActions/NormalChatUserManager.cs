@@ -6,14 +6,14 @@ using MessageAppDemo2.Backend.DataBase.Repositorys;
 using MessageAppDemo2.Backend.SystemData.ChangeController;
 using MessageAppDemo2.Backend.SystemData.ChangeController.SubControllers;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
 {
-    public class NormalChatUserManager : IChatUserManager<Guid, NormalChat>
+    public class  NormalChatUserManager : IChatUserManager<Guid, NormalChat>
     {
         public bool JoinChat(NormalChat Chat, User User)
         {

@@ -1,5 +1,5 @@
 ﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 
 namespace MessageAppDemo2.Backend.Chatting.ChatUserActions.Interfaces
 {

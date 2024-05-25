@@ -1,13 +1,19 @@
-﻿using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
+﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
 using MessageAppDemo2.Backend.DataBase.Repositorys;
 using MessageAppDemo2.Backend.ReportSystem;
+using MessageAppDemo2.Backend.ReportSystem.Interfaces;
 using MessageAppDemo2.Backend.SystemData.ChangeController;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
 using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
+using MessageAppDemo2.Backend.Users.UserManagers.Managers.Factory;
+using MessageAppDemo2.Backend.Users.UserManagers;
 using MessageAppDemo2.Backend.Users.UserUserManager.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -58,9 +64,40 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             throw new NotImplementedException();
         }
 
-        public bool BanUser(Admin Banner, User Banned, BanInformation Information)
+        public bool BanUser(HighLevelAdmin Banner, User Banned, BanInformation Information)
         {
-            throw new NotImplementedException();
+            if (Banner is null || Banned is null)
+            {
+                return false;
+            }
+
+            UserManager userManager = new();
+            UserManagerFactory userManagerFactory = new();
+
+            dynamic obj = userManagerFactory.CreateInstance((UserType)Banned);
+
+            DatabaseRepository<User, Guid> databaseUserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            DatabaseRepository<ChatBase, Guid> databaseChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
+
+            if (databaseUserRepository.GetByID(Banned.UserGUİD).UserType == UserType.BlockedPerson)
+            {
+                return false;
+            }
+            Type type = obj.GetType();
+
+            MethodInfo o = typeof(UserManager).GetMethod("Remove").MakeGenericMethod(type.GetInterface("IUserManager`2", true).GenericTypeArguments[0], type.GetInterface("IUserManager`2").GenericTypeArguments[1]);
+
+            o.Invoke(userManager, new object[] { obj, Banned.UserGUİD });
+
+            // userManager.Remove(obj, Banned.UserGUİD);
+
+            BlockedPerson blocked = new BlockedPerson(Banned, Information);
+            databaseUserRepository.Add(blocked);
+
+            DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(databaseChatRepository);
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseUserRepository);
+
+            return true;
         }
 
         public bool BlockUser(Admin Blocker, User Blocked)
@@ -132,12 +169,18 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             return true;
         }
 
-        public bool Report(UserReportDetails ReportDetails)
+        public bool Report(UserReport ReportDetails)
         {
-            throw new NotImplementedException();
+            DatabaseRepository<ReportBase, Guid> ReportRepository = DatabaseReportRepositoryPools.GetDatabaseReportRepositoryPool("DTBR").Get();
+
+            ReportRepository.Add(ReportDetails);
+
+            DatabaseReportRepositoryPools.GetDatabaseReportRepositoryPool("DTBR").Return(ReportRepository);
+
+            return true;
         }
 
-        public bool UnBanUser(Admin Banner, User Banned)
+        public bool UnBanUser(HighLevelAdmin Banner, BlockedPerson Banned)
         {
             throw new NotImplementedException();
         }

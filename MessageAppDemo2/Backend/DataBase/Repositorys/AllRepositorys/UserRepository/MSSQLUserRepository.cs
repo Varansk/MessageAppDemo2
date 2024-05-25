@@ -1,7 +1,7 @@
 ﻿using MessageAppDemo2.Backend.DataBase.Connections.DataBaseConnections;
 using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces;
 using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Data;

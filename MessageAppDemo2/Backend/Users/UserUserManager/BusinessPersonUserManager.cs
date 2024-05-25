@@ -1,9 +1,11 @@
 ﻿using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
 using MessageAppDemo2.Backend.DataBase.Repositorys;
 using MessageAppDemo2.Backend.ReportSystem;
+using MessageAppDemo2.Backend.ReportSystem.Interfaces;
 using MessageAppDemo2.Backend.SystemData.ChangeController;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
 using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using MessageAppDemo2.Backend.Users.UserUserManager.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -122,9 +124,15 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             return true;
         }
 
-        public bool Report(UserReportDetails ReportDetails)
+        public bool Report(UserReport ReportDetails)
         {
-            throw new NotImplementedException();
+            DatabaseRepository<ReportBase, Guid> ReportRepository = DatabaseReportRepositoryPools.GetDatabaseReportRepositoryPool("DTBR").Get();
+
+            ReportRepository.Add(ReportDetails);
+
+            DatabaseReportRepositoryPools.GetDatabaseReportRepositoryPool("DTBR").Return(ReportRepository);
+
+            return true;
         }
 
         public bool UnBlockUser(BusinessPerson Blocker, User Blocked)

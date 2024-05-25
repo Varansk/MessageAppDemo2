@@ -3,7 +3,7 @@ using MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase;
 using MessageAppDemo2.Backend.SystemData.ChangeController;
 using MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 
 namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserRepository

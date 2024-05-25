@@ -4,7 +4,7 @@ using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 using MessageAppDemo2.Backend.Chatting.ChatUserActions;
 using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
 using MessageAppDemo2.Backend.DataBase.Repositorys;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 
 namespace MessageAppDemo2.Backend.Chatting.ChatActions.ChatManagers

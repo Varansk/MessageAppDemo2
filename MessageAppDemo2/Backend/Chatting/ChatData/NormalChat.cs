@@ -1,8 +1,8 @@
 ﻿using MessageAppDemo2.Backend.Login_SignUp;
 using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
-using MessageAppDemo2.Backend.Users.UserData;
 using System;
 using System.Windows.Media.Imaging;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 
 namespace MessageAppDemo2.Backend.Chatting.ChatData
 {

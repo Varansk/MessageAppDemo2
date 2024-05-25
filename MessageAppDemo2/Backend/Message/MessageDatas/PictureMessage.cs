@@ -1,6 +1,6 @@
 ﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System.Collections.Generic;
 
 namespace MessageAppDemo2.Backend.Message.MessageDatas

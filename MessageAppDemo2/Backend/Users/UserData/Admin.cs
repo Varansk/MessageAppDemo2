@@ -1,10 +1,11 @@
 ﻿using MessageAppDemo2.Backend.PersonalData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 
 namespace MessageAppDemo2.Backend.Users.UserData
 {
 
-    public class Admin : User
+    public class Admin : User , IAdmin
     {
         public Admin(Guid ID) : base(ID)
         {

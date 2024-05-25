@@ -1,5 +1,5 @@
 ﻿using MessageAppDemo2.Backend.ReportSystem;
-using MessageAppDemo2.Backend.Users.UserData;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,6 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager.Interfaces
         bool UnBlockUser(UserType Blocker, User Blocked);
         bool AddFriend(UserType User1, User User2);
         bool RemoveFriend(UserType User1, User User2);
-        bool Report(UserReportDetails ReportDetails);
+        bool Report(UserReport ReportDetails);
     }
 }   

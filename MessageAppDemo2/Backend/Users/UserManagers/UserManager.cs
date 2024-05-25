@@ -1,4 +1,4 @@
-﻿using MessageAppDemo2.Backend.Users.UserData;
+﻿using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using MessageAppDemo2.Backend.Users.UserManagers.Managers.Interfaces;
 using System;
 
