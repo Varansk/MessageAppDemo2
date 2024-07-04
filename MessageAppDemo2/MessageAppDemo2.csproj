@@ -8,7 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FrontEnd\Resources\Icons\Images\chat.png" />
     <None Remove="FrontEnd\Resources\Icons\Images\NoImageIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="FrontEnd\Resources\Icons\Images\chat.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +27,21 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MessageAppWPFControlLibrary\MessageAppWPFCustomControlLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FrontEnd\Resources\Icons\IconResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IconResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="FrontEnd\Resources\Icons\IconResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IconResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

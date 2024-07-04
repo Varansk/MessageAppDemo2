@@ -1,6 +1,7 @@
 ﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
+using System.CodeDom;
 
 namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
 {
@@ -21,5 +22,27 @@ namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
 
         public abstract object Clone();
 
+        public static explicit operator MessageType(MessageBase message)
+        {
+            switch (message)
+            {
+                case TextMessage:
+                    return MessageType.TextMessage;
+                case VideoMessage:
+                    return MessageType.VideoMessage;
+                case VoiceMessage:
+                    return MessageType.VoiceMessage;
+                case PictureMessage:
+                    return MessageType.PictureMessage;
+                default:
+                    throw new ArgumentException("Type Not Found");
+            }
+        }
+
+    }
+
+    public enum MessageType
+    {
+        TextMessage, VoiceMessage, VideoMessage, PictureMessage
     }
 }

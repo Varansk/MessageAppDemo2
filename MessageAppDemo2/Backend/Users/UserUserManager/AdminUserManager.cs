@@ -67,8 +67,12 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
 
         public bool BanUser(Admin Banner, User Banned, BanInformation Information)
         {
-
             if (Banner is null || Banned is null)
+            {
+                return false;
+            }
+
+            if (Banned is IAdmin || Banned is BlockedPerson)
             {
                 return false;
             }
@@ -79,12 +83,7 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             dynamic obj = userManagerFactory.CreateInstance((UserType)Banned);
 
             DatabaseRepository<User, Guid> databaseUserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
-            DatabaseRepository<ChatBase, Guid> databaseChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
-            if (databaseUserRepository.GetByID(Banned.UserGUİD).UserType == UserType.BlockedPerson)
-            {
-                return false;
-            }
             Type type = obj.GetType();
 
             MethodInfo o = typeof(UserManager).GetMethod("Remove").MakeGenericMethod(type.GetInterface("IUserManager`2", true).GenericTypeArguments[0], type.GetInterface("IUserManager`2").GenericTypeArguments[1]);
@@ -96,7 +95,6 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             BlockedPerson blocked = new BlockedPerson(Banned, Information);
             databaseUserRepository.Add(blocked);
 
-            DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(databaseChatRepository);
             DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseUserRepository);
 
             return true;
@@ -193,7 +191,7 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
                 return false;
             }
 
-            if (databaseRepository.GetByID(Banned.UserGUİD) is not null)
+            if (databaseRepository.GetByID(Banned.UserGUİD) is not null && databaseRepository.GetByID(Banner.UserGUİD) is not null)
             {
                 databaseRepository.Remove(Banned, userController);
                 databaseRepository.Add(Banned.BannedUserAccount);

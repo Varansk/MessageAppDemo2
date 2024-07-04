@@ -4,7 +4,7 @@ namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses
 {
     public static class ByteExtension
     {
-        public static BitmapImage ToImage(this byte[] array)
+        public static BitmapImage ToBitmapImage(this byte[] array)
         {
             using (var ms = new System.IO.MemoryStream(array))
             {
@@ -15,6 +15,6 @@ namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses
                 image.EndInit();
                 return image;
             }
-        }
+        }   
     }
 }

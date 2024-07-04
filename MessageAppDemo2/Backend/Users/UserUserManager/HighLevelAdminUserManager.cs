@@ -16,10 +16,12 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace MessageAppDemo2.Backend.Users.UserUserManager
 {
-    public class HighLevelAdminUserManager : IHighLevelAdminUserManager
+    public class HighLevelAdminUserManager : IHighLevelAdminUserManager<Admin>
     {
         private UserController userController = new UserController();
         public bool AddFriend(Admin User1, User User2)
@@ -59,14 +61,45 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             return true;
         }
 
-        public bool BanAdmin(HighLevelAdmin User1, Admin User2)
+        public bool BanAdmin(HighLevelAdmin User1, Admin User2, BanInformation BanInformation)
         {
-            throw new NotImplementedException();
+            if (User1 is null || User2 is null)
+            {
+                return false;
+            }
+
+            UserManager userManager = new();
+            UserManagerFactory userManagerFactory = new();
+
+            dynamic obj = userManagerFactory.CreateInstance((UserType)User2);
+
+            DatabaseRepository<User, Guid> databaseUserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+
+            Type type = obj.GetType();
+
+            MethodInfo o = typeof(UserManager).GetMethod("Remove").MakeGenericMethod(type.GetInterface("IUserManager`2", true).GenericTypeArguments[0], type.GetInterface("IUserManager`2").GenericTypeArguments[1]);
+
+            o.Invoke(userManager, new object[] { obj, User2.UserGUİD });
+
+            // userManager.Remove(obj, User2.UserGUİD);
+
+            BlockedPerson blocked = new BlockedPerson(User2, BanInformation);
+            databaseUserRepository.Add(blocked);
+
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseUserRepository);
+
+            return true;
         }
 
-        public bool BanUser(HighLevelAdmin Banner, User Banned, BanInformation Information)
+        public bool BanUser(HighLevelAdmin User1, User Banned, BanInformation Information)
         {
-            if (Banner is null || Banned is null)
+            if (User1 is null || Banned is null)
+            {
+                return false;
+            }
+
+            if (Banned is IAdmin || Banned is BlockedPerson)
             {
                 return false;
             }
@@ -77,12 +110,8 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             dynamic obj = userManagerFactory.CreateInstance((UserType)Banned);
 
             DatabaseRepository<User, Guid> databaseUserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
-            DatabaseRepository<ChatBase, Guid> databaseChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
-            if (databaseUserRepository.GetByID(Banned.UserGUİD).UserType == UserType.BlockedPerson)
-            {
-                return false;
-            }
+
             Type type = obj.GetType();
 
             MethodInfo o = typeof(UserManager).GetMethod("Remove").MakeGenericMethod(type.GetInterface("IUserManager`2", true).GenericTypeArguments[0], type.GetInterface("IUserManager`2").GenericTypeArguments[1]);
@@ -94,7 +123,6 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             BlockedPerson blocked = new BlockedPerson(Banned, Information);
             databaseUserRepository.Add(blocked);
 
-            DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(databaseChatRepository);
             DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseUserRepository);
 
             return true;
@@ -180,9 +208,25 @@ namespace MessageAppDemo2.Backend.Users.UserUserManager
             return true;
         }
 
-        public bool UnBanUser(HighLevelAdmin Banner, BlockedPerson Banned)
+        public bool UnBanUser(HighLevelAdmin User1, BlockedPerson Banned)
         {
-            throw new NotImplementedException();
+            UserController userController = new();
+            DatabaseRepository<User, Guid> databaseRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            if (User1 is null || Banned is null)
+            {
+                return false;
+            }
+
+            if (databaseRepository.GetByID(Banned.UserGUİD) is not null && databaseRepository.GetByID(User1.UserGUİD) is not null)
+            {
+                databaseRepository.Remove(Banned, userController);
+                databaseRepository.Add(Banned.BannedUserAccount);
+            }
+
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseRepository);
+
+            return true;
         }
 
         public bool UnBlockUser(Admin Blocker, User Blocked)

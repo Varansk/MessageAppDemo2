@@ -12,11 +12,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="FrontEnd\Resources\Icons\IconResources.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="FrontEnd\UserControls\PersonScreen.xaml">
       <SubType>Designer</SubType>
     </Page>

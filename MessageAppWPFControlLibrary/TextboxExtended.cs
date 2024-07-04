@@ -173,6 +173,7 @@ namespace YazilimCalismasiWPF8
         {
             IsTextEmpty = string.IsNullOrEmpty(this.Text); 
             base.OnTextChanged(e);
+            
         }
 
     }

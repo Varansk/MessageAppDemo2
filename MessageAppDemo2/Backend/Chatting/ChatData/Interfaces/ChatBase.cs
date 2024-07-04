@@ -33,7 +33,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData.Interfaces
                 case GroupChat:
                     return ChatType.GroupChat;
                 default:
-                    throw new ArgumentException("Type Not Fount");
+                    throw new ArgumentException("Type Not Found");
             }
         }
 

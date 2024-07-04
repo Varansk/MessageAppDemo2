@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace MessageAppDemo2.Backend.Users.UserUserManager.Interfaces
 {
-    public interface IHighLevelAdminUserManager : IAdminUserManager<HighLevelAdmin>
+    public interface IHighLevelAdminUserManager<UserType> : IAdminUserManager<HighLevelAdmin>
     {
-        bool BanAdmin(HighLevelAdmin User1, Admin User2);
+        bool BanAdmin(HighLevelAdmin User1, UserType User2, BanInformation BanInformation);
     }
 }

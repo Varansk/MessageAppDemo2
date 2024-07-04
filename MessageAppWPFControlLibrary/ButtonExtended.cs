@@ -51,7 +51,7 @@ namespace MessageAppWPFCustomControlLibrary
             get { return (Brush)GetValue(OnMouseClickBorderBrushProperty); }
             set { SetValue(OnMouseClickBorderBrushProperty, value); }
         }
-
+        
         // Using a DependencyProperty as the backing store for OnMouseClickBorderBrush.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OnMouseClickBorderBrushProperty =
             DependencyProperty.Register("OnMouseClickBorderBrush", typeof(Brush), typeof(ButtonExtended), new PropertyMetadata(Brushes.DarkBlue));

@@ -76,7 +76,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
                 });
 
             }
-
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseRepository);
             return true;
         }
 

@@ -169,11 +169,11 @@
                             <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=OnMouseEnterBorderBrush}" />
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=OnMouseEnterBorderBrush}" />
                             <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=OnMouseClickBorderBrush}" />
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=OnMouseClickBorderBrush}" />
                             <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
@@ -187,4 +187,55 @@
         </Setter>
     </Style>
 
+
+    <Style TargetType="{x:Type MyNamespace:ChatCard}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MyNamespace:ChatCard}">
+                    <Border
+                        x:Name="mainborder"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            
+                            <Image x:Name="mainImage" Source="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MainImage}" Stretch="Fill">
+                                <Image.Clip>
+                                    <EllipseGeometry
+                                        Center="170,90"
+                                        RadiusX="90"
+                                        RadiusY="90" />
+                                </Image.Clip>
+                            </Image>
+
+                            <TextBlock Text="{TemplateBinding LastMessage}" x:Name="lastMessage" />
+                            
+
+                        </Grid>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger >
+                            
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
