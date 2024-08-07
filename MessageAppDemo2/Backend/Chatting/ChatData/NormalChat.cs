@@ -9,7 +9,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData
 
     public class NormalChat : ChatBase
     {
-        public string ChatName
+        public override string ChatName
         {
             get
             {
@@ -30,8 +30,12 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData
                 }
                 return null;
             }
+            set
+            {
+                //
+            }
         }
-        public BitmapImage ChatPicture
+        public override BitmapImage ChatPicture
         {
             get
             {
@@ -44,6 +48,10 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData
                     }
                 }
                 return null;
+            }
+            set
+            {
+               // throw new NotImplementedException();
             }
         }
         public NormalChat(Guid ChatID) : base(ChatID)

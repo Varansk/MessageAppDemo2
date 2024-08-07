@@ -109,7 +109,7 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.LoginSignu
 
                     if (!result)
                     {
-                        OnError.Invoke(this, new ErrorEventArgs("Login Process Failed! Try Again"));
+                        OnError.Invoke(this, new ErrorEventArgs("Sign Up Process Failed! Try Again"));
                     }
                     else
                     {

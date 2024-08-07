@@ -1,7 +1,9 @@
 ﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 using MessageAppDemo2.Backend.Users.UserData.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.CodeDom;
+
 
 namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
 {
@@ -9,9 +11,14 @@ namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
     {
         public int MessageID { get; init; }
         public DateTime MessageSentDate { get; set; }
+
+        [JsonIgnore]
         public User MessageSender { get; set; }
+        [JsonIgnore]
         public ChatBase WhichChatMessageSent { get; set; }
+        [JsonIgnore]
         public object RawMessage { get { return this; } }
+
         public bool IsEdited { get; set; }
         public MessageBase()
         {

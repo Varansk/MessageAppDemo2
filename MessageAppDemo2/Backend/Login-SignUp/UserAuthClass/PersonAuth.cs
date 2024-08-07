@@ -2,6 +2,7 @@
 using MessageAppDemo2.Backend.DataBase.Repositorys;
 using MessageAppDemo2.Backend.Users.UserData;
 using MessageAppDemo2.Backend.Users.UserData.Interfaces;
+using MessageAppDemo2.Backend.ValueChecksAndControls;
 using System;
 using System.Windows;
 
@@ -23,7 +24,7 @@ namespace MessageAppDemo2.Backend.Login_SignUp
             bool result = base.Login();
             if (result)
             {
-                LoggedUserPool.AddLoggedUser(this.Instance);                
+                LoggedUserPool.AddLoggedUser(UserValueChecks.FindUser(Instance));
                 return true;
             }
             return false;

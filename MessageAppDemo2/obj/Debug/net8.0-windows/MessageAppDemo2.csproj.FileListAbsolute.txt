@@ -24,8 +24,6 @@ C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-win
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\System.Memory.Data.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
-C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
@@ -36,7 +34,6 @@ C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-win
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.dll
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\MessageAppWPFCustomControlLibrary.pdb
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\obj\Debug\net8.0-windows\MessageAppDemo2.csproj.AssemblyReference.cache
@@ -64,3 +61,19 @@ C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\obj\Debug\net8.0-win
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\obj\Debug\net8.0-windows\FrontEnd\UserControls\PersonScreen.g.cs
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\obj\Debug\net8.0-windows\FrontEnd\UserControls\PersonScreen.baml
 C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\obj\Debug\net8.0-windows\MessageAppDemo2.sourcelink.json
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\RabbitMQ.Client.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\ertur\source\repos\MessageAppDemo2\MessageAppDemo2\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll

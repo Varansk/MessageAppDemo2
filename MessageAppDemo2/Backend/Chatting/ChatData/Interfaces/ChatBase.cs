@@ -2,6 +2,7 @@
 using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace MessageAppDemo2.Backend.Chatting.ChatData.Interfaces
 {
@@ -11,6 +12,8 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData.Interfaces
         public Guid ChatID { get; init; }
         public List<MessageBase> Messages { get; set; }
         public List<User> ChatUsers { get; set; }
+        public abstract BitmapImage ChatPicture { get; set; }
+        public abstract string ChatName { get; set; }
         public string ChatDetails { get; set; }
         private ChatBase()
         {

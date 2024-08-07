@@ -9,17 +9,20 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData
 
     public class GroupChat : ChatBase
     {
+        private BitmapImage _BitmapImage;
+
         public List<User> GroupAdminUsers { get; set; }
-        public string ChatName { get; set; }
+        public override string ChatName { get; set; }
         public List<User> BlockedUsers { get; set; }
-        public BitmapImage ChatPicture { get; set; }
+        public override BitmapImage ChatPicture { get { return _BitmapImage; } set { _BitmapImage = value; } }
+
 
         public GroupChat(Guid ChatID) : base(ChatID)
         {
-            GroupAdminUsers = new List<User>(); 
+            GroupAdminUsers = new List<User>();
             BlockedUsers = new List<User>();
         }
-        public GroupChat() : this(Guid.NewGuid()) 
+        public GroupChat() : this(Guid.NewGuid())
         {
 
         }

@@ -20,8 +20,8 @@ namespace MessageAppDemo2.FrontEnd.UserControls
         private Login_SignUpViewModel _loginSignUpViewModel = new();
 
         public LoginView()
-        {          
-          
+        {
+            
             InitializeComponent();          
             this.DataContext = _loginSignUpViewModel;
         }

@@ -199,43 +199,119 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{TemplateBinding CornerRadius}">
+                        CornerRadius="5">
 
-                        <Grid Margin="10">
+                        <Grid Margin="4">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="5.7*" />
+                                <ColumnDefinition Width="0.4*" />
+                                <ColumnDefinition Width="0.4*" />
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            
-                            <Image x:Name="mainImage" Source="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MainImage}" Stretch="Fill">
-                                <Image.Clip>
-                                    <EllipseGeometry
-                                        Center="170,90"
-                                        RadiusX="90"
-                                        RadiusY="90" />
-                                </Image.Clip>
-                            </Image>
 
-                            <TextBlock Text="{TemplateBinding LastMessage}" x:Name="lastMessage" />
-                            
+
+                            <Ellipse
+                                x:Name="ProfilePicture"
+                                Grid.Row="0"
+                                Grid.RowSpan="6"
+                                Grid.Column="0"
+                                Stretch="UniformToFill"
+                                Stroke="#6F6D6D"
+                                StrokeThickness="0.1">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MainImage}" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+
+                            <TextBlock
+                                x:Name="ChatName"
+                                Grid.Row="1"
+                                Grid.RowSpan="2"
+                                Grid.Column="2"
+                                Grid.ColumnSpan="3"
+                                HorizontalAlignment="Left"
+                                FontSize="12"
+                                FontWeight="Bold"
+                                Text="{TemplateBinding ChatName}"
+                                TextWrapping="Wrap" />
+
+
+                            <TextBlock
+                                x:Name="LastMessageSenderName"
+                                Grid.Row="4"
+                                Grid.Column="2"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="6"
+                                FontWeight="DemiBold"
+                                Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessageSenderName, StringFormat={}{0} :}" />
+
+
+                            <Image
+                                Grid.Row="4"
+                                Grid.Column="3"
+                                Margin="1"
+                                Source="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessageLogo}"
+                                Stretch="UniformToFill" />
+
+
+                            <TextBlock
+                                Grid.Row="4 "
+                                Grid.Column="4"
+                                Grid.ColumnSpan="2"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="5.6"
+                                Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessage}" />
+
+
+                            <Viewbox
+                                x:Name="UnreadedMessages"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="5"
+                                Grid.ColumnSpan="2">
+
+                                <Grid Width="20" Height="20">
+
+                                    <Ellipse Fill="#B3B3B3" />
+
+                                    <TextBlock
+                                        x:Name="MessageCount"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        FontWeight="Bold"
+                                        Foreground="Black"
+                                        Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=NonReadMessageCount}"
+                                        TextAlignment="Center" />
+                                </Grid>
+                            </Viewbox>
 
                         </Grid>
-
                     </Border>
+
                     <ControlTemplate.Triggers>
-                        <DataTrigger >
-                            
+                        <DataTrigger Binding="{Binding ElementName=MessageCount, Path=Text}" Value="0">
+                            <Setter TargetName="UnreadedMessages" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>
+
                 </ControlTemplate>
+
             </Setter.Value>
         </Setter>
+
     </Style>
 </ResourceDictionary>

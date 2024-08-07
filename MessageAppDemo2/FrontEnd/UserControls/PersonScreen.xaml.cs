@@ -25,7 +25,7 @@ namespace MessageAppDemo2.FrontEnd.UserControls
 
         public PersonScreen()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             this.DataContext = _personScreenMainViewModel;
         }
     }

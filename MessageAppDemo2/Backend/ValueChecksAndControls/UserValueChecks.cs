@@ -65,6 +65,8 @@ namespace MessageAppDemo2.Backend.ValueChecksAndControls
         public static User FindUser(string PhoneNumber, string Password)
         {
             DatabaseRepository<User, Guid> databaseRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            bool a = CheckPassword(Password);
+            bool b = CheckPhoneNumber(PhoneNumber);
 
             if (CheckPhoneNumber(PhoneNumber) && CheckPassword(Password))
             {

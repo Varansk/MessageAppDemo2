@@ -3,92 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\chatting\\chatuseractions\\chatusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\chatting\\chatuseractions\\chatusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\converters\\greaterequalsthanparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\converters\\greaterequalsthanparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\chatcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\chatcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\converters\\smallerthanequalsparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\converters\\smallerthanequalsparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\converters\\greaterthanparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\converters\\greaterthanparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\converters\\sumconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\converters\\sumconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\converters\\smallerthanparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\converters\\smallerthanparameterconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\usercontrols\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\usercontrols\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\backend\\database\\realtimequeue\\rabbitmqmessagequeueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\backend\\database\\realtimequeue\\rabbitmqmessagequeueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\converters\\stringtoimagesourceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\converters\\stringtoimagesourceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\usercontrols\\personscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\usercontrols\\personscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\frontend-backendactions\\viewmodels\\app\\converters\\lastmessageconverters\\picturemessagelastmessageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\frontend-backendactions\\viewmodels\\app\\converters\\lastmessageconverters\\picturemessagelastmessageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\usercontrols\\personscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\usercontrols\\personscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\frontend-backendactions\\frontendloginredirecter\\loginredirecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\frontend-backendactions\\frontendloginredirecter\\loginredirecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\frontend-backendactions\\viewmodels\\app\\personscreenmainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\frontend-backendactions\\viewmodels\\app\\personscreenmainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\frontend-backendactions\\viewmodels\\app\\converters\\lastmessageconverters\\ilastmessageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\frontend-backendactions\\viewmodels\\app\\converters\\lastmessageconverters\\ilastmessageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\chatcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\chatcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\buttonextended.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\buttonextended.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappwpfcontrollibrary\\textboxextended.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB184A-7BC6-4C0F-B7C1-0753D140004A}|MessageAppWPFControlLibrary\\MessageAppWPFCustomControlLibrary.csproj|solutionrelative:messageappwpfcontrollibrary\\textboxextended.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|c:\\users\\ertur\\source\\repos\\messageappdemo2\\messageappdemo2\\frontend\\usercontrols\\personscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F09D54E7-097A-47F8-B339-3B3C84D99CF4}|MessageAppDemo2\\MessageAppDemo2.csproj|solutionrelative:messageappdemo2\\frontend\\usercontrols\\personscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -133,266 +73,93 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SmallerThanEqualsParameterConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\SmallerThanEqualsParameterConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Converters\\SmallerThanEqualsParameterConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\SmallerThanEqualsParameterConverter.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Converters\\SmallerThanEqualsParameterConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T11:12:32.626Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GreaterEqualsThanParameterConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\GreaterEqualsThanParameterConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Converters\\GreaterEqualsThanParameterConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\GreaterEqualsThanParameterConverter.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Converters\\GreaterEqualsThanParameterConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "RabbitMQMessageQueueService.cs",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\DataBase\\RealTimeQueue\\RabbitMQMessageQueueService.cs",
+              "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\DataBase\\RealTimeQueue\\RabbitMQMessageQueueService.cs",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\DataBase\\RealTimeQueue\\RabbitMQMessageQueueService.cs",
+              "RelativeToolTip": "MessageAppDemo2\\Backend\\DataBase\\RealTimeQueue\\RabbitMQMessageQueueService.cs",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAmwIUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T11:11:37.768Z"
+              "WhenOpened": "2024-08-07T10:55:53.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Window1.xaml",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Window1.xaml",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Window1.xaml",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Window1.xaml*",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Window1.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-02T17:30:20.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "StringToImageSourceConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\StringToImageSourceConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Converters\\StringToImageSourceConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\StringToImageSourceConverter.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Converters\\StringToImageSourceConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T21:14:16.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Generic.xaml",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Themes\\Generic.xaml",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Themes\\Generic.xaml",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Themes\\Generic.xaml",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Themes\\Generic.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-14T19:24:24.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChatCard.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\ChatCard.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\ChatCard.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\ChatCard.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\ChatCard.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAkwDEAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:46:10.603Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\App.xaml.cs",
               "RelativeDocumentMoniker": "MessageAppDemo2\\App.xaml.cs",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\App.xaml.cs",
               "RelativeToolTip": "MessageAppDemo2\\App.xaml.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAwCEAAAASAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAcwGAAAACrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T20:07:44.622Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\Windows\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\Windows\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\Windows\\MainWindow.xaml",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\Windows\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-22T19:36:11.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LoginView.xaml",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\LoginView.xaml",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\UserControls\\LoginView.xaml",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\LoginView.xaml",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\UserControls\\LoginView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-22T19:36:01.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\App.xaml",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\App.xaml",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\App.xaml",
-              "RelativeToolTip": "MessageAppDemo2\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-22T19:35:52.703Z",
+              "WhenOpened": "2024-08-07T10:55:49.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SumConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\SumConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Converters\\SumConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\SumConverter.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Converters\\SumConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T13:46:30.26Z"
+              "DocumentIndex": 2,
+              "Title": "Window1.xaml",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Window1.xaml",
+              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Window1.xaml",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Window1.xaml",
+              "RelativeToolTip": "MessageAppWPFControlLibrary\\Window1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-05T11:59:07.752Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SmallerThanParameterConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\SmallerThanParameterConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Converters\\SmallerThanParameterConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\SmallerThanParameterConverter.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Converters\\SmallerThanParameterConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAANAAAA",
+              "DocumentIndex": 4,
+              "Title": "PersonScreenMainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
+              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
+              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAwwEsAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T13:46:26.336Z"
+              "WhenOpened": "2024-07-07T20:20:41.076Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GreaterThanParameterConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\GreaterThanParameterConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\Converters\\GreaterThanParameterConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\Converters\\GreaterThanParameterConverter.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\Converters\\GreaterThanParameterConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T13:45:52.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "TextboxExtended.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\TextboxExtended.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\TextboxExtended.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\TextboxExtended.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\TextboxExtended.cs",
-              "ViewState": "AQIAAJoAAAAAAAAAAAAmwK8AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T19:56:04.645Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ButtonExtended.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\ButtonExtended.cs",
-              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\ButtonExtended.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\ButtonExtended.cs",
-              "RelativeToolTip": "MessageAppWPFControlLibrary\\ButtonExtended.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAADQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T19:59:50.22Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PictureMessageLastMessageConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\PictureMessageLastMessageConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\PictureMessageLastMessageConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\PictureMessageLastMessageConverter.cs",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\PictureMessageLastMessageConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T19:18:52.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ILastMessageConverter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\ILastMessageConverter.cs",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\ILastMessageConverter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\ILastMessageConverter.cs",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\Converters\\LastMessageConverters\\ILastMessageConverter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:41:52.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "LoginRedirecter.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\FrontendLoginRedirecter\\LoginRedirecter.cs",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\FrontendLoginRedirecter\\LoginRedirecter.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\FrontendLoginRedirecter\\LoginRedirecter.cs",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\FrontendLoginRedirecter\\LoginRedirecter.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T16:53:42.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PersonScreen.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T16:47:15.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "PersonScreen.xaml",
               "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml",
               "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml",
               "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml",
               "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-09T16:43:39.066Z"
+              "WhenOpened": "2024-07-07T18:57:18.217Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PersonScreenMainViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
-              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\FrontEnd-BackendActions\\ViewModels\\App\\PersonScreenMainViewModel.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwBAAAAAFAAAA",
+              "DocumentIndex": 6,
+              "Title": "PersonScreen.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
+              "RelativeDocumentMoniker": "MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
+              "RelativeToolTip": "MessageAppDemo2\\FrontEnd\\UserControls\\PersonScreen.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T16:47:37.28Z"
+              "WhenOpened": "2024-07-07T18:57:13.884Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatUserManager.cs",
-              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Chatting\\ChatUserActions\\ChatUserManager.cs",
-              "RelativeDocumentMoniker": "MessageAppDemo2\\Backend\\Chatting\\ChatUserActions\\ChatUserManager.cs",
-              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppDemo2\\Backend\\Chatting\\ChatUserActions\\ChatUserManager.cs",
-              "RelativeToolTip": "MessageAppDemo2\\Backend\\Chatting\\ChatUserActions\\ChatUserManager.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAwwE4AAAAMAAAA",
+              "DocumentIndex": 5,
+              "Title": "ChatCard.cs",
+              "DocumentMoniker": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\ChatCard.cs",
+              "RelativeDocumentMoniker": "MessageAppWPFControlLibrary\\ChatCard.cs",
+              "ToolTip": "C:\\Users\\ertur\\source\\repos\\MessageAppDemo2\\MessageAppWPFControlLibrary\\ChatCard.cs",
+              "RelativeToolTip": "MessageAppWPFControlLibrary\\ChatCard.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAxwFYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T14:03:44.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-05T11:59:01.153Z"
             }
           ]
         }

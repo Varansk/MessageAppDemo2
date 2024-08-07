@@ -59,16 +59,25 @@ namespace MessageAppWPFCustomControlLibrary
 
 
 
-        public BitmapImage LastMessageLogo
+        public ImageSource LastMessageLogo
         {
-            get { return (BitmapImage)GetValue(LastMessageLogoProperty); }
+            get { return (ImageSource)GetValue(LastMessageLogoProperty); }
             set { SetValue(LastMessageLogoProperty, value); }
-        }   
+        }
 
         // Using a DependencyProperty as the backing store for LastMessageLogo.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LastMessageLogoProperty =
-            DependencyProperty.Register("LastMessageLogo", typeof(BitmapImage), typeof(ChatCard), new PropertyMetadata(new BitmapImage()));
+            DependencyProperty.Register("LastMessageLogo", typeof(ImageSource), typeof(ChatCard), new PropertyMetadata(null));
 
+        public string LastMessageSenderName
+        {
+            get { return (string)GetValue(LastMessageSenderNameProperty); }
+            set { SetValue(LastMessageSenderNameProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LastMessageSenderName.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LastMessageSenderNameProperty =
+            DependencyProperty.Register("LastMessageSenderName", typeof(string), typeof(ChatCard), new PropertyMetadata(""));
 
         public string LastMessage
         {
@@ -80,6 +89,7 @@ namespace MessageAppWPFCustomControlLibrary
         public static readonly DependencyProperty LastMessageProperty =
             DependencyProperty.Register("LastMessage", typeof(string), typeof(ChatCard), new PropertyMetadata("There is no message here!"));
 
+
         public object Chat
         {
             get { return (object)GetValue(ChatProperty); }
@@ -90,8 +100,7 @@ namespace MessageAppWPFCustomControlLibrary
         public static readonly DependencyProperty ChatProperty =
             DependencyProperty.Register("Chat", typeof(object), typeof(ChatCard), new PropertyMetadata(new object()));
 
-
-
+            
         public double CornerRadius
         {
             get { return (double)GetValue(CornerRadiusProperty); }
@@ -104,6 +113,18 @@ namespace MessageAppWPFCustomControlLibrary
 
 
 
+        public int NonReadMessageCount
+        {
+            get { return (int)GetValue(NonReadMessageCountProperty); }
+            set { SetValue(NonReadMessageCountProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for NonReadMessageCount.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty NonReadMessageCountProperty =
+            DependencyProperty.Register("NonReadMessageCount", typeof(int), typeof(ChatCard), new PropertyMetadata(0));
+
+            
+
         public string ChatName
         {
             get { return (string)GetValue(ChatNameProperty); }
@@ -113,6 +134,8 @@ namespace MessageAppWPFCustomControlLibrary
         // Using a DependencyProperty as the backing store for ChatName.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ChatNameProperty =
             DependencyProperty.Register("ChatName", typeof(string), typeof(ChatCard), new PropertyMetadata(""));
+
+
 
 
         static ChatCard()

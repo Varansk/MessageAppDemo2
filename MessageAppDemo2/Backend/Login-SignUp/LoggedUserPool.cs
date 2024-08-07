@@ -9,7 +9,7 @@ namespace MessageAppDemo2.Backend.Login_SignUp
 
         public static void AddLoggedUser(User user)
         {
-            ObjectPool<User> pool = new ObjectPool<User>(() => user);
+            _LoggedUser = new ObjectPool<User>(() => user);
         }
         public static User GetLoggedUser()
         {

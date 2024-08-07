@@ -11,7 +11,7 @@ namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses
 {
     public static class BitmapImageExtension    
     {
-        private static Bitmap ToBitmap(this BitmapImage bitmapImage)
+        public static Bitmap ToBitmap(this BitmapImage bitmapImage)
         {
             // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
 
@@ -25,5 +25,19 @@ namespace MessageAppDemo2.Backend.SystemData.ExtensionClasses
                 return new Bitmap(bitmap);
             }
         }
+
+        public static byte[] ToByteArray(this BitmapImage bitmapImage)
+        {
+            byte[] data;
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
+            using (MemoryStream ms = new MemoryStream())
+            {
+                encoder.Save(ms);
+                data = ms.ToArray();
+            }
+            return data;
+        }
+        
     }
 }

@@ -18,7 +18,7 @@ namespace MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.BasicDatabasePool
         public static void AddToDatabasePool(this DataBaseConnect DatabaseValue, string ID)
         {
             ObjectPool<DataBaseConnect> ObjectPool = new(() => DatabaseValue);
-
+            AddDatabasePool(ID, ObjectPool);
         }
         public static void RemoveDatabasePool(string ID)
         {
