@@ -9,6 +9,9 @@ namespace MessageAppDemo2.Backend.Message.MessageDatas.Interfaces
 {
     public abstract class MessageBase : ICloneable
     {
+        public string ChatRoute { get; set; }
+        public Guid MessageSenderID { get; set; }
+        public Guid DependentChatGuid { get; set; }
         public int MessageID { get; init; }
         public DateTime MessageSentDate { get; set; }
 

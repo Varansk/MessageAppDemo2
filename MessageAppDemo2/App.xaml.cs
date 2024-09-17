@@ -21,8 +21,10 @@ using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageReposit
 using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.ReportRepository;
 using MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.UserRepository;
 using MessageAppDemo2.Backend.Login_SignUp;
+using MessageAppDemo2.Backend.Message.MessageActions;
 using MessageAppDemo2.Backend.Message.MessageDatas;
 using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
+using MessageAppDemo2.Backend.Message.MessageUserActions;
 using MessageAppDemo2.Backend.PersonalData;
 using MessageAppDemo2.Backend.ReportSystem.Interfaces;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses;
@@ -34,6 +36,7 @@ using MessageAppDemo2.Backend.Users.UserManagers.Managers.Factory;
 using MessageAppDemo2.Backend.Users.UserUserManager;
 using MessageAppDemo2.FrontEnd.Resources.Icons;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace MessageAppDemo2
@@ -55,7 +58,7 @@ namespace MessageAppDemo2
             #region DatabaseRepositorys
             VirtualDatabaseUserRepository virtualDatabaseUserRepository = new(virtualDatabase);
             VirtualDatabaseChatRepository virtualDatabaseChatRepository = new(virtualDatabase);
-            VirtualDatabaseMessageRepository virtualDatabaseMessageRepository = new(virtualDatabase, null);
+            VirtualDatabaseMessageRepository virtualDatabaseMessageRepository = new(virtualDatabase, Guid.Empty, "");
             VirtualDatabaseReportRepository virtualDatabaseReportRepository = new(virtualDatabase);
             #endregion
             #region RealTimeService
@@ -91,6 +94,12 @@ namespace MessageAppDemo2
             #endregion
 
 
+
+            /*Width="{Binding ElementName=ChatList,Path=ActualWidth}" 
+
+                        Width="200"
+                        Height="50"
+            */
             #region TestArea
             Guid[] gds = new Guid[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
 
@@ -146,35 +155,49 @@ namespace MessageAppDemo2
 
             LoggedUserPool.AddLoggedUser(person);
 
-            //  adm.BanUser(UserRepository.GetByID(gds[0]) as Admin, UserRepository.GetByID(gds[1]), new BanInformation("ban", 4, Backend.SystemData.Enums.Level.Medium, UserRepository.GetByID(gds[0])));
+           
 
 
-            // adminManager.Remove(gds[0]);
-
-            RealTimeService<MessageBase> real = RealTimeMessageServicePool.GetRealTimeMessageServicePool("RTS").Get();
-
-            real.CreateMessageChannel(groupChat.ChatID.ToString());
-
-            string tag = real.StartConsumeMessages(groupChat.ChatID.ToString(), ".main.Added");
-
-            /*  real.OnMessageReceived += (sender, e) =>
-              {
-                  MessageBox.Show(e.Message.Message.MessageID.ToString());
-              };*/
-
-            var queues = real.QueuesLog;
-
-
-            real.SendMessage(groupChat.ChatID.ToString(), ".main.Added", new ProcessedMessage<MessageBase> { MessageID = "5", MessageSended = Convert.ToDateTime("01/10/2007"), MessageAction = MessageAction.Add, MessageChannelName = groupChat.ChatID.ToString(), MessageSenderID = person.UserGUİD.ToString(), RoutingKey = ".main.Added", Message = new TextMessage() { Text = "Helllooo", WhichChatMessageSent = groupChat, MessageID = 5, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007") } });
+            MessageUserManager messageUserManager = new MessageUserManager();
 
 
 
-            //  real.StopConsumeMessages(tag);
 
 
-            queues = real.QueuesLog;
 
-            RealTimeMessageServicePool.GetRealTimeMessageServicePool("RTS").Return(real);
+            /* real.SendMessage(groupChat.ChatID.ToString(), ".main.Added", new ProcessedMessage<MessageBase> { MessageID = "5", MessageSended = Convert.ToDateTime("01/10/2007"), MessageAction = MessageAction.Add, MessageChannelName = groupChat.ChatID.ToString(), MessageSenderID = person.UserGUİD.ToString(), RoutingKey = ".main.Added", Message = new TextMessage() { Text = "Helllooo", WhichChatMessageSent = groupChat, MessageID = 5, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007") } });
+             */
+
+            var list = new Dictionary<string, List<ProcessedMessage<MessageBase>>>();
+            var list2 = new Dictionary<string, List<ProcessedMessage<MessageBase>>>();
+
+
+            var tags = messageUserManager.StartConsumeMessages(groupChat.ChatID.ToString(), ".main", list);
+            var tags2 = messageUserManager.StartConsumeMessages(normalChat.ChatID.ToString(), ".main.RR", list2);
+
+
+            messageUserManager.SendMessage(new TextMessage() { Text = "Hello1", WhichChatMessageSent = groupChat, MessageID = 5, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, groupChat.ChatID.ToString(), ".main", gds[2].ToString());
+
+            messageUserManager.SendMessage(new TextMessage() { Text = "Hello2", WhichChatMessageSent = groupChat, MessageID = 6, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, groupChat.ChatID.ToString(), ".main", gds[2].ToString());
+
+            messageUserManager.EditMessage("6", groupChat.ChatID.ToString(), ".main", new TextMessage() { Text = "NEWHELLO", WhichChatMessageSent = groupChat, MessageID = 6, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, gds[2].ToString());
+
+            messageUserManager.RemoveMessage(MessageType.TextMessage, 5.ToString(), groupChat.ChatID.ToString(), ".main");
+
+            
+
+
+            messageUserManager.SendMessage(new TextMessage() { Text = "Hello1", WhichChatMessageSent = normalChat, MessageID = 2, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main.RR", DependentChatGuid = normalChat.ChatID, MessageSenderID = gds[2] }, normalChat.ChatID.ToString(), ".main.RR", gds[2].ToString());
+
+
+            messageUserManager.StopConsumeMessages(tags);
+            messageUserManager.StopConsumeMessages(tags2);
+
+            for (int i = 0; i < 100; i++)
+            {           
+                MessageBox.Show("H");      
+            }
+
 
 
 

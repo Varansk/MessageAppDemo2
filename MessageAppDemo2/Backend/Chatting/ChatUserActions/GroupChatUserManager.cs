@@ -10,6 +10,7 @@ using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 
 namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
@@ -29,7 +30,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             DatabaseRepository<User, Guid> UserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
-            bool IsChatContainsUser = Chat.ChatUsers.Contains(Banned, userController);
+            bool IsChatContainsUser = (Chat.ChatUsers as List<User>).Contains(Banned, userController);
             bool IsChatBanListContainsUser = Chat.BlockedUsers.Contains(Banned, userController);
 
             bool IsUserContainsChat = Banned.PersonalChatList.ListOfChats.Contains(Chat, chatController);
@@ -76,7 +77,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             DatabaseRepository<User, Guid> UserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
-            bool IsChatContainsUser = Chat.ChatUsers.Contains(Banned, userController);
+            bool IsChatContainsUser = (Chat.ChatUsers as List<User>).Contains(Banned, userController);
             bool IsChatBanListContainsUser = Chat.BlockedUsers.Contains(Banned, userController);
 
             bool IsUserContainsChat = Banned.PersonalChatList.ListOfChats.Contains(Chat, chatController);
@@ -119,7 +120,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
 
-            bool IsChatContainsUser = Chat.ChatUsers.Contains(User, userController);
+            bool IsChatContainsUser = (Chat.ChatUsers as List<User>).Contains(User, userController);
             bool IsUserContainsChat = User.PersonalChatList.ListOfChats.Contains(Chat, chatController);
 
             if (IsChatContainsUser && IsUserContainsChat)
@@ -170,7 +171,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
 
-            bool IsChatContainsUser = Chat.ChatUsers.Contains(UserRepository.GetByID(UserID), UserController);
+            bool IsChatContainsUser = ((Chat.ChatUsers) as List<User>).Contains(UserRepository.GetByID(UserID), UserController);
             bool IsUserContainsChat = UserRepository.GetByID(UserID).PersonalChatList.ListOfChats.Contains(Chat, ChatController);
 
             if (!IsChatContainsUser && !IsUserContainsChat)

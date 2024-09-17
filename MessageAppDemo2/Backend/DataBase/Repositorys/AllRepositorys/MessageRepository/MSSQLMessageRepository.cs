@@ -12,12 +12,19 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRep
     public class MSSQLMessageRepository : Repository<MessageBase, int>, IRunStoredProcedure<SqlCommand, SqlDataReader>, IChatSelector
     {
         private MSSQLDatabase MSSQLDatabase;
-        private ChatBase DependentChat;
+        private Guid _dependentChat;
+        private string route;
 
         public MSSQLMessageRepository(MSSQLDatabase Database, ChatBase DependentChat)
         {
             MSSQLDatabase = Database;
-            this.DependentChat = DependentChat;
+            this._dependentChat = DependentChat.ChatID;
+            UpdateVirtualList();
+        }
+        public MSSQLMessageRepository(MSSQLDatabase Database, Guid DependentChatID)
+        {
+            MSSQLDatabase = Database;
+            this._dependentChat = DependentChatID;
             UpdateVirtualList();
         }
 
@@ -55,7 +62,7 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRep
 
         public override MessageBase GetByID(int ID)
         {
-            return _Items.Find(I => I.MessageID == ID && I.WhichChatMessageSent.ChatID == DependentChat.ChatID);
+            return _Items.Find(I => I.MessageID == ID && (I.DependentChatGuid == _dependentChat) && (I.ChatRoute == route));
         }
 
         public override void SaveAllChanges()
@@ -78,7 +85,17 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRep
 
         public void SetDependentChat(ChatBase Chat)
         {
-            DependentChat = Chat;
+            _dependentChat = Chat.ChatID;
+        }
+
+        public void SetDependentChat(Guid ChatID)
+        {
+            this._dependentChat = ChatID;
+        }
+
+        public void SetRoute(string Route)
+        {
+            this.route = Route;
         }
     }
 }

@@ -35,19 +35,19 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
             set { _userChats = value; OnPropertyChanged(); }
         }
 
-        private ObservableCollection<MessageBase> messages;
+        private ObservableCollection<MessageBase> _messages;
 
         public ObservableCollection<MessageBase> Messages
         {
-            get { return messages; }
-            set { messages = value; OnPropertyChanged(); }
+            get { return _messages; }
+            set { _messages = value; OnPropertyChanged(); }
         }
 
         public ChatCardDetails LastMessageDetails
         {
             get
             {
-                return ChatCardDetails.GetChatDetails(messages.Last());
+                return ChatCardDetails.GetChatDetails(_messages.Last());
             }
         }
 
@@ -71,12 +71,24 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
 
         public PersonScreenMainViewModel()
         {
+
+            /* this._userChats = new ObservableCollection<ChatBase>()
+             {
+                new GroupChat(Guid.NewGuid()) { ChatName = "FDJ beste", ChatDetails = "North, South", ChatPicture = IconResources.NoImageIcon.ToBitmapImage() },
+                new GroupChat(Guid.NewGuid()) { ChatName = "KpdML beste", ChatDetails = "East, West", ChatPicture = IconResources.mute.ToBitmapImage() }
+             };
+            */
+            _userChats = new ObservableCollection<ChatBase>(User.PersonalChatList.ListOfChats);
+            _messages = new ObservableCollection<MessageBase>(User.PersonalChatList.ListOfChats[0].Messages);
+
             GetChats = new RelayCommand((I) =>
             {
-               
+
 
             });
         }
+
+
 
     }
 }

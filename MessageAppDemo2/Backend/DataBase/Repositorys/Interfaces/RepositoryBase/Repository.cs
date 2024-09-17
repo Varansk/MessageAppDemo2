@@ -13,31 +13,32 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
         {
             _Items = new List<Item>();
         }
-        public void Add(Item Item)
+        public virtual void Add(Item Item)
         {
             _Items.Add(Item);
         }
-        public void Remove(ID ID)
+        public virtual void Remove(ID ID)
         {
             int Index = _Items.IndexOf(GetByID(ID));
 
-            if (Index != -1)
+            if (Index != -1) 
             {
                 _Items.RemoveAt(Index);
             }
 
         }
-        public void Remove(Item Item, BaseController<Item> Controller)
+        public virtual void Remove(Item Item, BaseController<Item> Controller)
         {
             foreach (Item item in _Items)
             {
                 if (Controller.AddRemoveController.Invoke(item, Item) && !Controller.UpdateController.Invoke(Item, item))
                 {
                     _Items.Remove(item);
+                    break;
                 }
             }
         }
-        public void UpdateWithPatch(ID ID, Action<Item> ChangestoBeMade)
+        public virtual void UpdateWithPatch(ID ID, Action<Item> ChangestoBeMade)
         {
             int Index = _Items.IndexOf(GetByID(ID));
 
@@ -46,7 +47,7 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
                 ChangestoBeMade.Invoke(_Items[Index]);
             }
         }
-        public void UpdateWithPatch(Item Item, Action<Item> ChangesToBeMade, BaseController<Item> Controller)
+        public virtual void UpdateWithPatch(Item Item, Action<Item> ChangesToBeMade, BaseController<Item> Controller)
         {
             foreach (Item item in _Items)
             {
@@ -56,12 +57,13 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
                     if (Item != item)
                     {
                         ChangesToBeMade.Invoke(Item);
-                    }             
+                    }
+                    break;
                 }
             }
         }
 
-        public void UpdateWithPut(ID ID, Item Model)
+        public virtual void UpdateWithPut(ID ID, Item Model)
         {
             int Index = _Items.IndexOf(GetByID(ID));
 
@@ -70,7 +72,7 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
                 _Items[Index] = Model;
             }
         }
-        public void UpdateWithPut(Item Item, Item Model, BaseController<Item> Controller)
+        public virtual void UpdateWithPut(Item Item, Item Model, BaseController<Item> Controller)
         {
             for (int i = 0; i < _Items.Count; i++)
             {
@@ -78,20 +80,21 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.Interfaces.RepositoryBase
                 {
                     _Items[i] = Model;
                     Item = Model;
+                    break;
                 }
             }
         }
 
-        public List<Item> GetAll()
+        public virtual List<Item> GetAll()
         {
             return _Items.ToList();
         }
-        public Item GetSingle(Predicate<Item> Predicate)
+        public virtual Item GetSingle(Predicate<Item> Predicate)
         {
             return _Items.Find(Predicate);
         }
 
-        public List<Item> GetWhere(Func<Item, bool> Predicate)
+        public virtual List<Item> GetWhere(Func<Item, bool> Predicate)
         {
             return _Items.Where(Predicate).ToList();
         }

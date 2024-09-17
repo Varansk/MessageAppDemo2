@@ -1,6 +1,7 @@
 ﻿using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
 using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
 using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.DataBase.Repositorys.RepositoryExtensions;
 using MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers.Interfaces;
 using MessageAppDemo2.Backend.Message.MessageDatas;
 using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
@@ -12,27 +13,28 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
     public class VideoMessageManager : IMessageManager<VideoMessage, int>
     {
         private Guid _DependentChatID;
-        public ChatBase DependentChat
+        private string _Route;
+        public Guid DependentGuid
         {
             get
             {
-                DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
-
-                ChatBase chat = ChatRepository.GetByID(_DependentChatID);
-
-                DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(ChatRepository);
-
-                return chat;
+                return _DependentChatID;
             }
             set
             {
-                _DependentChatID = value.ChatID;
+                _DependentChatID = value;
             }
         }
+
+        public string Route { get { return _Route; } set { _Route = value; } }
+
         public void Add(VideoMessage Item)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
+
+            MessageRepository.SetDependentChat(Item.DependentChatGuid);
+            MessageRepository.SetRoute(Item.ChatRoute);
 
             ChatRepository.UpdateWithPatch(_DependentChatID, I => I.Messages.Add(Item));
             MessageRepository.Add(Item);
@@ -44,8 +46,10 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
         public VideoMessage GetByID(int ID)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            MessageRepository.SetDependentChat(_DependentChatID);
+            MessageRepository.SetRoute(Route);
 
-            MessageBase Message = MessageRepository.GetSingle(I => I.MessageID == ID && I.WhichChatMessageSent.ChatID == _DependentChatID);
+            MessageBase Message = MessageRepository.GetByID(ID);
 
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
 
@@ -55,8 +59,10 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
         public void Remove(int ID)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            MessageRepository.SetDependentChat(_DependentChatID);
+            MessageRepository.SetRoute(Route);
 
-            MessageRepository.Remove(MessageRepository.GetSingle(I => I.WhichChatMessageSent.ChatID == _DependentChatID && I.MessageID == ID), new MessageController());
+            MessageRepository.Remove(MessageRepository.GetByID(ID), new MessageController());
 
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
         }
@@ -64,8 +70,10 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
         public void Update(int ID, Action<VideoMessage> Changes)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            MessageRepository.SetDependentChat(_DependentChatID);
+            MessageRepository.SetRoute(Route);
 
-            MessageRepository.UpdateWithPatch(MessageRepository.GetSingle(I => I.MessageID == ID), Changes as Action<MessageBase>, new MessageController());
+            MessageRepository.UpdateWithPatch(MessageRepository.GetByID(ID), Changes as Action<MessageBase>, new MessageController());
 
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
         }

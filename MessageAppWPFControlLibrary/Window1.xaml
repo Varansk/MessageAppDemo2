@@ -27,13 +27,13 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="5">
 
-                                <Grid Margin="4">
+                                <Grid Margin="5">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="0.5*" />
                                         <ColumnDefinition Width="auto" />
-                                        <ColumnDefinition Width="auto" />
-                                        <ColumnDefinition Width="5.7*" />
+                                        <ColumnDefinition Width="0.7*" />
+                                        <ColumnDefinition Width="5*" />
                                         <ColumnDefinition Width="0.4*" />
                                         <ColumnDefinition Width="0.4*" />
                                     </Grid.ColumnDefinitions>
@@ -61,47 +61,60 @@
                                         </Ellipse.Fill>
                                     </Ellipse>
 
-                                    <TextBlock
-                                        x:Name="ChatName"
+                                    <Viewbox
                                         Grid.Row="1"
                                         Grid.RowSpan="2"
                                         Grid.Column="2"
                                         Grid.ColumnSpan="3"
-                                        HorizontalAlignment="Left"
-                                        FontSize="12"
-                                        FontWeight="Bold"
-                                        Text="{TemplateBinding ChatName}"
-                                        TextWrapping="Wrap" />
+                                        HorizontalAlignment="Left">
+                                        <TextBlock
+                                            x:Name="ChatName"
+                                            FontWeight="Bold"
+                                            Text="{TemplateBinding ChatName}"
+                                            TextWrapping="Wrap" />
+                                    </Viewbox>
 
 
-                                    <TextBlock
-                                        x:Name="LastMessageSenderName"
-                                        Grid.Row="4"
-                                        Grid.Column="2"
-                                        HorizontalAlignment="Left"
-                                        VerticalAlignment="Center"
-                                        FontSize="6"
-                                        FontWeight="DemiBold"
-                                        Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessageSenderName, StringFormat={}{0} :}" />
+                                    <Viewbox Grid.Row="4" Grid.Column="2">
+                                        <TextBlock
+                                            x:Name="LastMessageSenderName"
+                                            Grid.Row="4"
+                                            Grid.Column="2"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            FontWeight="DemiBold"
+                                            Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessageSenderName, StringFormat={}{0} :}" />
+                                    </Viewbox>
 
 
-                                    <Image
+                                    <Viewbox
                                         Grid.Row="4"
                                         Grid.Column="3"
-                                        Margin="1"
-                                        Source="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessageLogo}"
-                                        Stretch="UniformToFill" />
+                                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                                        Stretch="Uniform">
+                                        <Image
+                                            Grid.Row="4"
+                                            Grid.Column="3"
+                                            Margin="1"
+                                            Source="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessageLogo}"
+                                            Stretch="UniformToFill" />
+                                    </Viewbox>
 
 
-                                    <TextBlock
+
+                                    <Viewbox
                                         Grid.Row="4 "
                                         Grid.Column="4"
-                                        Grid.ColumnSpan="2"
                                         HorizontalAlignment="Left"
-                                        VerticalAlignment="Center"
-                                        FontSize="5.6"
-                                        Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessage}" />
-
+                                        VerticalAlignment="Center">
+                                        <TextBlock
+                                            Grid.Row="4 "
+                                            Grid.Column="4"
+                                            Grid.ColumnSpan="2"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=LastMessage}" />
+                                    </Viewbox>
 
                                     <Viewbox
                                         x:Name="UnreadedMessages"
@@ -127,15 +140,15 @@
 
                                 </Grid>
                             </Border>
-                            
+
                             <ControlTemplate.Triggers>
                                 <DataTrigger Binding="{Binding ElementName=MessageCount, Path=Text}" Value="0">
                                     <Setter TargetName="UnreadedMessages" Property="Visibility" Value="Hidden" />
                                 </DataTrigger>
                             </ControlTemplate.Triggers>
-                            
+
                         </ControlTemplate>
-                        
+
                     </Setter.Value>
                 </Setter>
 
@@ -143,7 +156,7 @@
 
 
         </Grid.Resources>
-        
+
         <local:ChatCard
             Width="200"
             Height="50"

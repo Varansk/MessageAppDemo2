@@ -58,7 +58,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
                     keyValuePairs.Add((ChatType)chat, new List<ChatBase>() { chat });
                 }
             }
-
+            
             foreach (ChatType key in keyValuePairs.Keys)
             {
                 List<ChatBase> chats = keyValuePairs[key];

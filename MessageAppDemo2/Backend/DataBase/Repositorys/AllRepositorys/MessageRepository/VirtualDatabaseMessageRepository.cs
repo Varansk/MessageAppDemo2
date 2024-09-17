@@ -13,22 +13,40 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.MessageRep
     public class VirtualDatabaseMessageRepository : Repository<MessageBase, int>, IChatSelector
     {
         private VirtualDatabase virtualDatabase;
-        private ChatBase dependentChat;
-        public VirtualDatabaseMessageRepository(VirtualDatabase VDB, ChatBase DependentChat)
+        private Guid dependentChatGuid;
+        private string route;
+        public VirtualDatabaseMessageRepository(VirtualDatabase VDB, ChatBase DependentChat, string Route)
         {
             virtualDatabase = VDB;
-            dependentChat = DependentChat;
+            dependentChatGuid = DependentChat.ChatID;
+            this.route = Route;
             UpdateVirtualList();
         }
-        public void SetDependentChat(ChatBase Chat)
+
+        public VirtualDatabaseMessageRepository(VirtualDatabase VDB, Guid DependentChatGuid, string Route)
         {
-            dependentChat = Chat;
+            virtualDatabase = VDB;
+            dependentChatGuid = DependentChatGuid;
+            this.route = Route;
+            UpdateVirtualList();
         }
 
+        public void SetDependentChat(ChatBase Chat)
+        {
+            dependentChatGuid = Chat.ChatID;
+        }
+        public void SetDependentChat(Guid ChatID)
+        {
+            dependentChatGuid = ChatID;
+        }
+        public void SetRoute(string Route)
+        {
+            this.route = Route;
+        }
 
         public override MessageBase GetByID(int ID)
         {
-            return _Items.Find(I => I.MessageID == ID && I.WhichChatMessageSent.ChatID == dependentChat.ChatID);
+            return _Items.Find(I => I.MessageID == ID && (I.DependentChatGuid == dependentChatGuid) && (I.ChatRoute == route));
         }
 
         public override void SaveAllChanges()

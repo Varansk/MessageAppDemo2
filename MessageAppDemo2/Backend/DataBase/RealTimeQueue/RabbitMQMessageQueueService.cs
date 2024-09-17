@@ -22,6 +22,7 @@ namespace MessageAppDemo2.Backend.DataBase.RealTimeQueue
     {
         protected RabbitMQConnection RabbitMQ;
 
+        private bool IsStartGiven = false;
 
         public RabbitMQMessageQueueService(RabbitMQConnection RabbitMQ)
         {
@@ -70,7 +71,7 @@ namespace MessageAppDemo2.Backend.DataBase.RealTimeQueue
             {
                 throw new ArgumentException("InvalidName");
             }
-            RabbitMQ.GetChannel.ExchangeDeclare(ChannelName, ExchangeType.Topic, false, false);
+            RabbitMQ.GetChannel.ExchangeDeclare(ChannelName, ExchangeType.Topic, false,false);
         }
 
         public void SendMessage(string ChannelName, string RoutingKey, ProcessedMessage<MessageType> Message)
@@ -112,47 +113,53 @@ namespace MessageAppDemo2.Backend.DataBase.RealTimeQueue
             RabbitMQ.GetChannel.QueueBind(QueueName, ChannelName, RoutingKey);
 
 
-            RabbitMQ.GetEventingBasicConsumer.Received += (sender, e) =>
+            if (IsStartGiven == false)
             {
-                JsonSerializerSettings settings = new JsonSerializerSettings()
+                RabbitMQ.GetEventingBasicConsumer.Received += (sender, e) =>
                 {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                    TypeNameHandling = TypeNameHandling.Auto,
-                    Formatting = Formatting.Indented
+                    JsonSerializerSettings settings = new JsonSerializerSettings()
+                    {
+                        NullValueHandling = NullValueHandling.Ignore,
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        TypeNameHandling = TypeNameHandling.Auto,
+                        Formatting = Formatting.Indented
+                    };
+                    settings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter());
+                    settings.Converters.Add(new BitmapImageJsonConverter());
+
+
+                    byte[] b = e.Body.ToArray();
+
+                    string s = Encoding.UTF8.GetString(b);
+
+                    ProcessedMessage<MessageType>? messageNormal = JsonConvert.DeserializeObject<ProcessedMessage<MessageType>>(s, settings);
+
+                    string MessageQueueKey = messageNormal.MessageChannelName + messageNormal.RoutingKey;
+
+                    if (OnMessageReceived is not null)
+                    {
+                        OnMessageReceived.Invoke(this, new MessageEventArgs<MessageType>(messageNormal));
+                    }
+
+                    if (_messageQueues.ContainsKey(MessageQueueKey))
+                    {
+                        _messageQueues[MessageQueueKey].Add(messageNormal);
+                    }
+                    else
+                    {
+                        _messageQueues.Add(MessageQueueKey, new List<ProcessedMessage<MessageType>>() { messageNormal });
+                        _routesConsuming.Add(MessageQueueKey);
+                    }
+
                 };
-                settings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter());
-                settings.Converters.Add(new BitmapImageJsonConverter());
-
-
-                byte[] b = e.Body.ToArray();
-
-                string s = Encoding.UTF8.GetString(b);
-
-                ProcessedMessage<MessageType>? messageNormal = JsonConvert.DeserializeObject<ProcessedMessage<MessageType>>(s, settings);
-
-                if (OnMessageReceived is not null)
-                {
-                    OnMessageReceived.Invoke(this, new MessageEventArgs<MessageType>(messageNormal));
-                }                
-
-                if (_messageQueues.ContainsKey(QueueKey))
-                {
-                    _messageQueues[QueueKey].Add(messageNormal);
-                }
-                else
-                {
-                    _messageQueues.Add(QueueKey, new List<ProcessedMessage<MessageType>>() { messageNormal });
-                    _routesConsuming.Add(QueueKey);
-                }
-
-            };
-
+            }
             string tag = RabbitMQ.GetChannel.BasicConsume(QueueName, true, RabbitMQ.GetEventingBasicConsumer);
-
+            IsStartGiven = true;
 
             return tag;
+
         }
+
 
         public void StopConsumeMessages(string ConsumerTag)
         {

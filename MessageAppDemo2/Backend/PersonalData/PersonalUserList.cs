@@ -7,7 +7,7 @@ namespace MessageAppDemo2.Backend.PersonalData
 
     public class PersonalUserLists : ICloneable
     {
-        public List<User> ListOfSavedUsers { get; set; }
+        public List<User> ListOfSavedUsers { get; set; } 
         public Dictionary<Guid, string> SavedUserNames { get; set; }
         public List<User> BlockedPersons { get; set; }
         public List<User> BlockedByUsers { get; set; }
