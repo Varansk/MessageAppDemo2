@@ -67,6 +67,11 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
             }
         }
 
+        public RelayCommand SendMessage;
+
+
+
+
         public RelayCommand GetChats;
 
         public PersonScreenMainViewModel()
@@ -82,6 +87,12 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
             _messages = new ObservableCollection<MessageBase>(User.PersonalChatList.ListOfChats[0].Messages);
 
             GetChats = new RelayCommand((I) =>
+            {
+
+
+            });
+
+            SendMessage = new RelayCommand((I) =>
             {
 
 

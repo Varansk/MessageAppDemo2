@@ -31,16 +31,14 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
         public void Add(PictureMessage Item)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
-            DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
             MessageRepository.SetDependentChat(Item.DependentChatGuid);
             MessageRepository.SetRoute(Item.ChatRoute);
 
+            Item.DependentChatGuid = _DependentChatID;
 
-            ChatRepository.UpdateWithPatch(_DependentChatID, I => I.Messages.Add(Item));
             MessageRepository.Add(Item);
 
-            DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(ChatRepository);
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
         }
 

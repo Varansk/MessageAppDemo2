@@ -36,7 +36,7 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
             MessageRepository.SetDependentChat(Item.DependentChatGuid);
             MessageRepository.SetRoute(Item.ChatRoute);
 
-            ChatRepository.UpdateWithPatch(_DependentChatID, I => I.Messages.Add(Item));
+
             MessageRepository.Add(Item);
 
             DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(ChatRepository);

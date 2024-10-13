@@ -5,6 +5,7 @@ using MessageAppDemo2.Backend.SystemData.ChangeController;
 using MessageAppDemo2.Backend.SystemData.CollectionChangeDedector.ChangeDedector;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses.CollectionExtensions;
 using System;
+using System.Linq;
 
 namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.ChatRepository
 {
@@ -55,7 +56,7 @@ namespace MessageAppDemo2.Backend.DataBase.Repositorys.AllRepositorys.ChatReposi
             virtualDatabase.OpenConnection();
             ListChangesDedector<ChatBase> ChangeDedector = new();
 
-            ChangeInfo<ChatBase> ChangeInfo = ChangeDedector.GetChanges(new ChatController(), _Items, virtualDatabase.ChatList);
+            ChangeInfo<ChatBase> ChangeInfo = ChangeDedector.GetChanges(new ChatController(), _Items.ToList(), virtualDatabase.ChatList.ToList());
 
             if (ChangeInfo.IsChanged)
             {

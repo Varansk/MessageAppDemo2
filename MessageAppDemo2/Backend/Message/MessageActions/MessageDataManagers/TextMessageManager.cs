@@ -33,15 +33,13 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
         public void Add(TextMessage Item)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
-            DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
             MessageRepository.SetDependentChat(Item.DependentChatGuid);
             MessageRepository.SetRoute(Item.ChatRoute);
 
-            ChatRepository.UpdateWithPatch(_DependentChatID, I => I.Messages.Add(Item));
+            Item.DependentChatGuid = _DependentChatID;
             MessageRepository.Add(Item);
 
-            DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(ChatRepository);
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
         }
 
@@ -78,10 +76,7 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
             MessageRepository.SetRoute(Route);
 
             MessageRepository.UpdateWithPatch(MessageRepository.GetByID(ID), Changes as Action<MessageBase>, new MessageController());
-            ChatRepository.GetByID(_DependentChatID).Messages.Remove(MessageRepository.GetByID(ID), new MessageController());
-
-
-
+            
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
             DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(ChatRepository);
         }

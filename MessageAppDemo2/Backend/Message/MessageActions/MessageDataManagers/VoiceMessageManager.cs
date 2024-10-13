@@ -31,15 +31,13 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
         public void Add(VoiceMessage Item)
         {
             DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
-            DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
             MessageRepository.SetDependentChat(Item.DependentChatGuid);
             MessageRepository.SetRoute(Item.ChatRoute);
 
-            ChatRepository.UpdateWithPatch(_DependentChatID, I => I.Messages.Add(Item));
-            MessageRepository.Add(Item);
+            Item.DependentChatGuid = _DependentChatID;
 
-            DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Return(ChatRepository);
+            MessageRepository.Add(Item);
             DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
         }
 

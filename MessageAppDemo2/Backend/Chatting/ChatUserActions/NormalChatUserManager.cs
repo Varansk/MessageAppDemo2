@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
 {
-    public class  NormalChatUserManager : IChatUserManager<Guid, NormalChat>
+    public class NormalChatUserManager : IChatUserManager<Guid, NormalChat>
     {
         public bool JoinChat(NormalChat Chat, User User)
         {
@@ -50,7 +50,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
 
-            bool IsChatContainsUser = Chat.ChatUsers.Contains(User, userController);
+            bool IsChatContainsUser = Chat.UserIDs.Contains(User.UserGUİD);
             bool IsUserContainsChat = User.PersonalChatList.ListOfChats.Contains(Chat, chatController);
 
             if (IsChatContainsUser && IsUserContainsChat)
@@ -60,11 +60,11 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
 
             if (!IsChatContainsUser)
             {
-                Chat.ChatUsers.Add(User);
+                Chat.UserIDs.Add(User.UserGUİD);
 
-                if (!ChatRepository.GetByID(Chat.ChatID).ChatUsers.Contains(User, userController))
+                if (!ChatRepository.GetByID(Chat.ChatID).UserIDs.Contains(User.UserGUİD))
                 {
-                    ChatRepository.UpdateWithPatch(Chat.ChatID, (I) => { I.ChatUsers.Add(User); });
+                    ChatRepository.UpdateWithPatch(Chat.ChatID, (I) => { I.UserIDs.Add(User.UserGUİD); });
                 }
             }
 
@@ -126,7 +126,7 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             DatabaseRepository<User, Guid> UserRepository = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
             DatabaseRepository<ChatBase, Guid> ChatRepository = DatabaseChatRepositoryPools.GetDatabaseChatRepositoryPool("DTBR").Get();
 
-            bool IsChatContainsUser = Chat.ChatUsers.Contains(UserRepository.GetByID(UserID), UserController);
+            bool IsChatContainsUser = Chat.UserIDs.Contains(UserID);
             bool IsUserContainsChat = UserRepository.GetByID(UserID).PersonalChatList.ListOfChats.Contains(Chat, ChatController);
 
             if (!IsChatContainsUser && !IsUserContainsChat)
@@ -135,11 +135,11 @@ namespace MessageAppDemo2.Backend.Chatting.ChatUserActions
             }
             if (IsChatContainsUser)
             {
-                Chat.ChatUsers.Remove(UserRepository.GetByID(UserID), UserController);
+                Chat.UserIDs.Remove(UserID);
 
-                if (ChatRepository.GetByID(Chat.ChatID).ChatUsers.Contains(UserRepository.GetByID(UserID), UserController))
+                if (ChatRepository.GetByID(Chat.ChatID).UserIDs.Contains(UserID))
                 {
-                    ChatRepository.UpdateWithPatch(Chat.ChatID, (I) => { I.ChatUsers.Remove(UserRepository.GetByID(UserID), UserController); });
+                    ChatRepository.UpdateWithPatch(Chat.ChatID, (I) => { I.UserIDs.Remove(UserID); });
                 }
             }
             if (IsUserContainsChat)
