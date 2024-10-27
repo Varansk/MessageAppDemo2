@@ -30,6 +30,7 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.FrontendLoginRedirect
         {
             UserControl UC = _loginFactory.CreateInstanceWithParameter(Type, Parameters);
 
+
             Window.Content = UC;
         }
     }

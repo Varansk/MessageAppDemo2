@@ -90,7 +90,8 @@
                                     <Viewbox
                                         Grid.Row="4"
                                         Grid.Column="3"
-                                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
                                         Stretch="Uniform">
                                         <Image
                                             Grid.Row="4"

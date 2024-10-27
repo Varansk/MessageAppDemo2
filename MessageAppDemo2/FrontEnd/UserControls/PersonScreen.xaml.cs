@@ -21,12 +21,22 @@ namespace MessageAppDemo2.FrontEnd.UserControls
     /// </summary>
     public partial class PersonScreen : UserControl
     {
-        private PersonScreenMainViewModel _personScreenMainViewModel = new();
+        private PersonScreenMainViewModel _personScreenMainViewModel;
 
         public PersonScreen()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+
+            Application.Current.MainWindow.Height = 600;
+            Application.Current.MainWindow.Width = 1000;
+
+            _personScreenMainViewModel = new();
             this.DataContext = _personScreenMainViewModel;
+        }
+
+        private void Grid_Drop(object sender, DragEventArgs e)
+        {
+            _personScreenMainViewModel.DragDropCommand.Execute(e);
         }
     }
 }

@@ -30,7 +30,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock 
+        <TextBlock
             Grid.Row="0"
             Grid.Column="1"
             Grid.ColumnSpan="2"

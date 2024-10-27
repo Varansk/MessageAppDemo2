@@ -192,13 +192,13 @@ namespace MessageAppDemo2
 
             messageUserManager.StopConsumeMessages(tags);
             messageUserManager.StopConsumeMessages(tags2);
-
+/*
             for (int i = 0; i < 100; i++)
             {           
                 MessageBox.Show("H");      
             }
 
-
+            */
 
 
 

@@ -151,6 +151,16 @@ namespace MessageAppDemo2.FrontEnd.Resources.Icons {
         }
         
         /// <summary>
+        ///   System.Byte[] türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static byte[] send {
+            get {
+                object obj = ResourceManager.GetObject("send", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
         internal static System.Drawing.Bitmap wave_sound {

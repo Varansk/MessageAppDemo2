@@ -6,20 +6,20 @@ using System.Collections.Generic;
 
 namespace MessageAppDemo2.Backend.Message.MessageDatas
 {
-    public class TextMessage : MessageBase, IFileUploadableMessage<UploadedFile<object>>, IHaveQuotedMessage, IHaveTextMessage
+    public class TextMessage : MessageBase, IFileUploadableMessage<UploadedFile>, IHaveQuotedMessage, IHaveTextMessage
     {
         private MessageBase _QuotedMessage;
         private string _Text;
-        private List<UploadedFile<object>> _Files;
+        private List<UploadedFile> _Files;
 
         public MessageBase QuotedMessage { get { return _QuotedMessage; } set { _QuotedMessage = value; } }
         public string Text { get { return _Text; } set { _Text = value; } }
-        public List<UploadedFile<object>> Files { get { return _Files; } set { _Files = value; } }
+        public List<UploadedFile> Files { get { return _Files; } set { _Files = value; } }
         public TextMessage()
         {
             _QuotedMessage = null;
             _Text = string.Empty;
-            _Files = new List<UploadedFile<object>>();
+            _Files = new List<UploadedFile>();
         }
         public override object Clone()
         {

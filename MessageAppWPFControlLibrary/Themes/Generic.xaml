@@ -154,9 +154,8 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ButtonCornerRadius}"
-                        SnapsToDevicePixels="true"
                         Opacity="{TemplateBinding Opacity}"
-                        >
+                        SnapsToDevicePixels="true">
                         <ContentPresenter
                             x:Name="contentPresenter"
                             Margin="{TemplateBinding Padding}"

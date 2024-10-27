@@ -10,6 +10,8 @@
   <ItemGroup>
     <None Remove="FrontEnd\Resources\Icons\Images\chat.png" />
     <None Remove="FrontEnd\Resources\Icons\Images\NoImageIcon.png" />
+    <None Remove="FrontEnd\Resources\Icons\Images\send.png" />
+    <None Remove="Resources\send.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,8 @@
 
   <ItemGroup>
     <Resource Include="FrontEnd\Resources\Icons\Images\NoImageIcon.png" />
+    <Resource Include="FrontEnd\Resources\Icons\Images\send.png" />
+    <Resource Include="Resources\send.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +54,10 @@
     <Page Update="FrontEnd\UserControls\PersonScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FrontEnd\FrontEnd-BackendActions\ViewModels\App\HelperClasses\" />
   </ItemGroup>
 
 </Project>
