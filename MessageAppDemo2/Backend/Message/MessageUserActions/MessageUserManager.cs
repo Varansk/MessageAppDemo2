@@ -108,13 +108,13 @@ namespace MessageAppDemo2.Backend.Message.MessageUserActions
         }
         public List<MessageBase> GetLastxxMessage(int LastMessageCount, string ChannelID, string Route)
         {
-            DatabaseRepository<MessageBase, int> databaseRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            DatabaseRepository<MessageBase, int> databaseRepository = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
 
-            var Last200Message = databaseRepository.GetWhere((I) => { return I.DependentChatGuid.ToString() == ChannelID && I.ChatRoute == Route; }).OrderBy((I) => I.MessageSentDate).TakeLast(200);
+            var LastxxMessage = databaseRepository.GetWhere((I) => { return I.DependentChatGuid.ToString() == ChannelID && I.ChatRoute == Route; }).OrderBy((I) => I.MessageSentDate).TakeLast(LastMessageCount);
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(databaseRepository);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(databaseRepository);
 
-            return Last200Message.ToList();
+            return LastxxMessage.ToList();
         }
     }
 }

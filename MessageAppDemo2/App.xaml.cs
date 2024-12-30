@@ -95,11 +95,7 @@ namespace MessageAppDemo2
 
 
 
-            /*Width="{Binding ElementName=ChatList,Path=ActualWidth}" 
-
-                        Width="200"
-                        Height="50"
-            */
+           
             #region TestArea
             Guid[] gds = new Guid[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
 
@@ -111,7 +107,7 @@ namespace MessageAppDemo2
             { BirthDay = Convert.ToDateTime("2/1/1965"), Email = "alberthusson@gmail.com", Name = "Albert", LastName = "Husson", Password = "Defaultpassword.?543210AH", FirstRegisteredDay = Convert.ToDateTime("2/1/2005"), ProfilePicture = IconResources.NoImageIcon.ToBitmapImage(), PhoneNumber = "1260673055", UserSignature = "Germanium " };
 
             NormalChat normalChat = new NormalChat(gds[3]) { ChatDetails = "East West" };
-            GroupChat groupChat = new GroupChat(gds[4]) { ChatName = "FDJ beste", ChatDetails = "North, South", ChatPicture = IconResources.NoImageIcon.ToBitmapImage() };
+            GroupChat groupChat = new GroupChat(gds[4]) { ChatName = "FDJ beste", ChatDetails = "North, South", ChatPicture = IconResources.archive.ToBitmapImage() };
             NormalChat normalChat1 = new NormalChat(gds[5]) { ChatDetails = "South East" };
 
 
@@ -173,25 +169,25 @@ namespace MessageAppDemo2
 
 
             var tags = messageUserManager.StartConsumeMessages(groupChat.ChatID.ToString(), ".main", list);
-            var tags2 = messageUserManager.StartConsumeMessages(normalChat.ChatID.ToString(), ".main.RR", list2);
+           // var tags2 = messageUserManager.StartConsumeMessages(normalChat.ChatID.ToString(), ".main.RR", list2);
 
 
             messageUserManager.SendMessage(new TextMessage() { Text = "Hello1", WhichChatMessageSent = groupChat, MessageID = 5, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, groupChat.ChatID.ToString(), ".main", gds[2].ToString());
 
             messageUserManager.SendMessage(new TextMessage() { Text = "Hello2", WhichChatMessageSent = groupChat, MessageID = 6, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, groupChat.ChatID.ToString(), ".main", gds[2].ToString());
 
-            messageUserManager.EditMessage("6", groupChat.ChatID.ToString(), ".main", new TextMessage() { Text = "NEWHELLO", WhichChatMessageSent = groupChat, MessageID = 6, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, gds[2].ToString());
+            messageUserManager.EditMessage("6", groupChat.ChatID.ToString(), ".main", new TextMessage() { Text = "AQWDA", WhichChatMessageSent = groupChat, MessageID = 6, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, gds[2].ToString());
 
-            messageUserManager.RemoveMessage(MessageType.TextMessage, 5.ToString(), groupChat.ChatID.ToString(), ".main");
+         //   messageUserManager.RemoveMessage(MessageType.TextMessage, 5.ToString(), groupChat.ChatID.ToString(), ".main");
 
             
 
 
-            messageUserManager.SendMessage(new TextMessage() { Text = "Hello1", WhichChatMessageSent = normalChat, MessageID = 2, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main.RR", DependentChatGuid = normalChat.ChatID, MessageSenderID = gds[2] }, normalChat.ChatID.ToString(), ".main.RR", gds[2].ToString());
+            messageUserManager.SendMessage(new VideoMessage() { Text = "İMMM", WhichChatMessageSent = normalChat, MessageID = 2, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = normalChat.ChatID, MessageSenderID = gds[2] }, normalChat.ChatID.ToString(), ".main.RR", gds[2].ToString());
 
 
             messageUserManager.StopConsumeMessages(tags);
-            messageUserManager.StopConsumeMessages(tags2);
+            //messageUserManager.StopConsumeMessages(tags2);
 /*
             for (int i = 0; i < 100; i++)
             {           

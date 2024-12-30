@@ -42,13 +42,13 @@ namespace MessageAppDemo2.Backend.Message.MessageUserChatActions
             realTime.CreateMessageChannel(ChannelID);
             realTime.SendMessage(ChannelID, Route + ".Edited", message);
 
-            var messagerepo = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            var messagerepo = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
             messagerepo.SetRoute(NewMessage.ChatRoute);
             messagerepo.SetDependentChat(Guid.Parse(ChannelID));
 
             messagerepo.UpdateWithPut(int.Parse(MessageID), NewMessage);
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(messagerepo);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(messagerepo);
             RealTimeMessageServicePool.GetRealTimeMessageServicePool("RTS").Return(realTime);
         }
 

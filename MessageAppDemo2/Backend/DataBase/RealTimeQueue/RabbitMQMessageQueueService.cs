@@ -76,7 +76,7 @@ namespace MessageAppDemo2.Backend.DataBase.RealTimeQueue
 
         public void SendMessage(string ChannelName, string RoutingKey, ProcessedMessage<MessageType> Message)
         {
-
+            
             // string serialized = System.Text.Json.JsonSerializer.Serialize(Message);
 
             JsonSerializerSettings settings = new JsonSerializerSettings()
@@ -105,6 +105,7 @@ namespace MessageAppDemo2.Backend.DataBase.RealTimeQueue
 
         public string StartConsumeMessages(string ChannelName, string RoutingKey)
         {
+            
             string QueueKey = ChannelName + RoutingKey;
 
             RabbitMQ.GetChannel.ExchangeDeclare(ChannelName, ExchangeType.Topic, false, false);

@@ -47,7 +47,6 @@ namespace MessageAppDemo2.Backend.DataBase.RealTimeQueue
             }
             catch (Exception)
             {
-
                 MessageBox.Show("ConnectionError");
             }
 

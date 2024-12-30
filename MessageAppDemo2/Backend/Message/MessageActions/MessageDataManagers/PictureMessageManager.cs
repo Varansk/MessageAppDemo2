@@ -30,7 +30,7 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
 
         public void Add(PictureMessage Item)
         {
-            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
 
             MessageRepository.SetDependentChat(Item.DependentChatGuid);
             MessageRepository.SetRoute(Item.ChatRoute);
@@ -39,43 +39,43 @@ namespace MessageAppDemo2.Backend.Message.MessageActions.MessageDataManagers
 
             MessageRepository.Add(Item);
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(MessageRepository);
         }
 
         public PictureMessage GetByID(int ID)
         {
-            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
 
             MessageRepository.SetDependentChat(_DependentChatID);
             MessageRepository.SetRoute(Route);
 
             MessageBase Message = MessageRepository.GetByID(ID);
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(MessageRepository);
 
             return Message as PictureMessage;
         }
 
         public void Remove(int ID)
         {
-            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
             MessageRepository.SetDependentChat(_DependentChatID);
             MessageRepository.SetRoute(Route);
 
             MessageRepository.Remove(MessageRepository.GetByID(ID), new MessageController());
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(MessageRepository);
         }
 
         public void Update(int ID, Action<PictureMessage> Changes)
         {
-            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            DatabaseRepository<MessageBase, int> MessageRepository = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
             MessageRepository.SetDependentChat(_DependentChatID);
             MessageRepository.SetRoute(Route);
 
             MessageRepository.UpdateWithPatch(MessageRepository.GetByID(ID), Changes as Action<MessageBase>, new MessageController());
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(MessageRepository);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(MessageRepository);
         }
     }
 }

@@ -8,11 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\delete.png" />
+    <None Remove="Images\dots.png" />
+    <None Remove="Images\edit.png" />
     <None Remove="Images\NoImageIcon.jpeg" />
-    <None Remove="NoImageIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\dots.png" />
+    <Resource Include="Images\edit.png" />
     <Resource Include="Images\NoImageIcon.jpeg" />
   </ItemGroup>
 

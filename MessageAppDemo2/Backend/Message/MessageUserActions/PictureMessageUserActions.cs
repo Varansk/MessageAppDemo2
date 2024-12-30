@@ -38,11 +38,11 @@ namespace MessageAppDemo2.Backend.Message.MessageRelatedActions
             realTime.CreateMessageChannel(ChannelID);
             realTime.SendMessage(ChannelID, Route, message);
 
-            var messagerepo = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+            var messagerepo = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
 
             messagerepo.UpdateWithPut(int.Parse(MessageID), NewMessage);
 
-            DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(messagerepo);
+            DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(messagerepo);
             RealTimeMessageServicePool.GetRealTimeMessageServicePool("RTS").Return(realTime);
         }
 

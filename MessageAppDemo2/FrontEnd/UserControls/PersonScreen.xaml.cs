@@ -32,11 +32,13 @@ namespace MessageAppDemo2.FrontEnd.UserControls
 
             _personScreenMainViewModel = new();
             this.DataContext = _personScreenMainViewModel;
+
         }
 
         private void Grid_Drop(object sender, DragEventArgs e)
-        {
+        {                  
             _personScreenMainViewModel.DragDropCommand.Execute(e);
+            MessageBox.Show("xx");
         }
     }
 }

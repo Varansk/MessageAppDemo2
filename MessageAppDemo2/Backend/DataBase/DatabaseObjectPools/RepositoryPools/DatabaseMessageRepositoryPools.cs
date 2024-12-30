@@ -25,7 +25,7 @@ namespace MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools
         {
             _DatabaseRepositoryPools.RemoveObjectPooler(ID);
         }
-        public static IObjectPooler<DatabaseRepository<MessageBase, int>> GetDatabaseUserRepositoryPool(string ID)
+        public static IObjectPooler<DatabaseRepository<MessageBase, int>> GetDatabaseMessageRepositoryPool(string ID)
         {
             return _DatabaseRepositoryPools.GetObjectPooler(ID);
         }

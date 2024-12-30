@@ -20,11 +20,11 @@ namespace MessageAppDemo2.Backend.Chatting.ChatData.Interfaces
         {
             get
             {
-                var messagesrepo = DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+                var messagesrepo = DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Get();
 
                 var list = messagesrepo.GetWhere((I) => { return I.DependentChatGuid == ChatID; });
 
-                DatabaseMessageRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(messagesrepo);
+                DatabaseMessageRepositoryPools.GetDatabaseMessageRepositoryPool("DTBR").Return(messagesrepo);
 
                 return list;
             }
