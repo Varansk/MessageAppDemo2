@@ -56,8 +56,4 @@
     </Page>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="FrontEnd\FrontEnd-BackendActions\ViewModels\App\HelperClasses\" />
-  </ItemGroup>
-
 </Project>

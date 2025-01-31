@@ -19,6 +19,10 @@ namespace MessageAppDemo2.FrontEnd.UserControls
     /// <summary>
     /// PersonScreen.xaml etkileşim mantığı
     /// </summary>
+    /// 
+
+   
+
     public partial class PersonScreen : UserControl
     {
         private PersonScreenMainViewModel _personScreenMainViewModel;

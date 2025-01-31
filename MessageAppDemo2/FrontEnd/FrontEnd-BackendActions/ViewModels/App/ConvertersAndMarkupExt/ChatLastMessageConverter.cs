@@ -12,7 +12,7 @@ using System.Windows.Data;
 
 namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App.Converters
 {
-    public class ChatLastMessageConverter : IValueConverter
+    public class ChatLastMessageeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

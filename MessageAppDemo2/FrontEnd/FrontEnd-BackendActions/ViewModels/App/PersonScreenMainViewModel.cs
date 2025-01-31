@@ -8,12 +8,14 @@ using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
 using MessageAppDemo2.Backend.Message.MessageUserActions;
 using MessageAppDemo2.Backend.PersonalData;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses;
+using MessageAppDemo2.Backend.SystemData.IFactory;
 using MessageAppDemo2.Backend.SystemData.UploadedFile;
 using MessageAppDemo2.Backend.Users.UserData;
 using MessageAppDemo2.Backend.Users.UserData.Interfaces;
 using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.BindingActions;
 using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App;
 using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App.ConvertersAndMarkupExt;
+using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App.HelperClasses;
 using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.LoginSignupScreen.Commands;
 using MessageAppDemo2.FrontEnd.FrontendHelpers.WindowHelpers;
 using MessageAppDemo2.FrontEnd.Resources.Icons;
@@ -24,15 +26,17 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Printing;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
 {
 
-    
+
     public class PersonScreenMainViewModel : ObservableObject
     {
         #region ChatPropertys
@@ -86,18 +90,28 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
         }
 
 
-        public ChatBase _chatListSelectedItem;
+        public ChatCardInstance _chatListSelectedItem;
 
-        public ChatBase ChatListSelectedItem
+        public ChatCardInstance ChatListSelectedItem
         {
-            get { return _chatListSelectedItem; }
-            set { _chatListSelectedItem = value; OnPropertyChanged(); }
+            get { return _chatListSelectedItem ?? new ChatCardInstance(); }
+            set
+            {
+                _chatListSelectedItem = value;
+                if (_chatListSelectedItem is not null && _chatListSelectedItem.Chat is not null)
+                {
+                    ToBeSelectedMessageList = Messages[_chatListSelectedItem.Chat.ChatID.ToString()];
+                }
+
+                OnPropertyChanged();
+            }
 
         }
+
         #endregion
 
 
-
+        #region MessagePropertys
         private Dictionary<string, ObservableCollection<MessageBase>> _messages;
         public Dictionary<string, ObservableCollection<MessageBase>> Messages
         {
@@ -105,17 +119,33 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
             set { _messages = value; OnPropertyChanged(); }
         }
 
+        private ObservableCollection<MessageBase> _messageList;
+        public ObservableCollection<MessageBase> ToBeSelectedMessageList
+        {
+            get
+            {
+                return _messageList;
+
+            }
+            set
+            {
+                _messageList = value;
+                OnPropertyChanged();
+            }
+
+        }
+        #endregion
 
 
-
+        #region User
         public Person LoggedUser
         {
             get
             {
-                User user = LoggedUserPool.GetLoggedUser();
-                LoggedUserPool.ReturnLoggedUser(user);
+                Person person = LoggedUserPool.GetLoggedUser() as Person;
+                LoggedUserPool.ReturnLoggedUser(person);
 
-                return user as Person;
+                return person;
             }
             set
             {
@@ -123,8 +153,7 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
                 OnPropertyChanged();
             }
         }
-
-
+        #endregion
 
 
         #region NonSendedMessage
@@ -149,49 +178,31 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
         #endregion
 
 
-
+        #region Commands
         public RelayCommand SendMessageCommand { get; private set; }
         public RelayCommand DragDropCommand { get; private set; }
+        #endregion
 
 
-
-
+        #region HelperPropertys
         private MessageUserManager _messageUserManager;
-
-
-
-
-
-
-
-
+        #endregion
 
 
         public PersonScreenMainViewModel()
         {
-            WaitingFiles = new ObservableCollection<UploadedFile>();
-
             _messageUserManager = new MessageUserManager();
 
-            /*   this._userChats = new ObservableCollection<ChatBase>()
-                {
-                   new GroupChat(Guid.NewGuid()) { ChatName = "FDJ beste", ChatDetails = "North, South", ChatPicture = IconResources.NoImageIcon.ToBitmapImage() },
-                   new GroupChat(Guid.NewGuid()) { ChatName = "KpdML beste", ChatDetails = "East, West", ChatPicture = IconResources.mute.ToBitmapImage() }
-                };*/
-
+            WaitingFiles = new ObservableCollection<UploadedFile>();
             _userChats = new ObservableCollection<ChatBase>(LoggedUser.PersonalChatList.ListOfChats);
+
 
             _messages = (LoggedUser.PersonalChatList.ListOfChats.Select((I) =>
              {
-                 var messages = new ObservableCollection<MessageBase>(_messageUserManager.GetLastxxMessage(200, I.ChatID.ToString(), ".main")); //
+                 var messages = new ObservableCollection<MessageBase>(_messageUserManager.GetLastxxMessage(30, I.ChatID.ToString(), ".main")); //
 
                  return new KeyValuePair<string, ObservableCollection<MessageBase>>(I.ChatID.ToString(), messages);
              })).ToDictionary();
-
-
-
-
-
 
 
 
@@ -220,8 +231,31 @@ namespace MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App
 
             SendMessageCommand = new RelayCommand((I) =>
             {
-                MessageBox.Show("heey");
-                // _messageUserManager.SendMessage()
+                if (!string.IsNullOrWhiteSpace(MessageText))
+                {
+                    MessageBox.Show("heey");
+
+                    Type typeofmessage = DedectSendindMessageType.DedectTypeReturnType(WaitingFiles, MessageText);
+                    MessageType type = DedectSendindMessageType.DedectType(WaitingFiles, MessageText);
+
+                    MessageParameters messageParameters = new MessageParameters() { ChatRoute = ".main", DependentChatGuid = ChatListSelectedItem.Chat.ChatID, Files = WaitingFiles.ToList(), MessageSentDate = DateTime.Now, Text = MessageText, QuotedMessage = null, DependentChatMessageCount = 10, MessageSenderGuid = LoggedUser.UserGUİD };
+
+                    MessageFactory messageFactory = new MessageFactory();
+
+                    MessageBase message = messageFactory.CreateInstanceWithParameter(type, messageParameters);
+
+                    
+
+                    
+
+
+
+
+
+
+                    _messageUserManager.SendMessage(message, ChatListSelectedItem.Chat.ChatID.ToString(), ".main", LoggedUser.UserGUİD.ToString());
+                }
+
             });
         }
 

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using MessageAppDemo2.Backend.SystemData.ExtensionClasses;
 using MessageAppDemo2.Backend.Chatting.ChatData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.Repositorys;
+using MessageAppDemo2.Backend.Users.UserData.Interfaces;
+using MessageAppDemo2.Backend.DataBase.DatabaseObjectPools.RepositoryPools;
 
 namespace MessageAppDemo2.FrontEnd.FrontendHelpers.WindowHelpers
 {
@@ -24,7 +27,20 @@ namespace MessageAppDemo2.FrontEnd.FrontendHelpers.WindowHelpers
 
 
 
-            string nsn = LastMessage.MessageSender.Name + " " + LastMessage.MessageSender.LastName;
+            
+
+            DatabaseRepository<User, Guid> repo = DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Get();
+
+            User user = repo.GetSingle((I) => { return I.UserGUİD == LastMessage.MessageSenderID; });
+
+            DatabaseUserRepositoryPools.GetDatabaseUserRepositoryPool("DTBR").Return(repo);
+
+            string FirstName = user.Name;
+            string LastName = user.LastName;
+
+            string nsn = FirstName + " " + LastName;
+
+
             if (nsn.Length >= 10)
             {
                 UserNameFormat = nsn.Substring(0, 10);

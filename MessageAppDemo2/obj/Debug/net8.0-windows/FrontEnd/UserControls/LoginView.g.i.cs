@@ -79,7 +79,7 @@ namespace MessageAppDemo2.FrontEnd.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MessageAppDemo2;V1.0.0.0;component/frontend/usercontrols/loginview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MessageAppDemo2;component/frontend/usercontrols/loginview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\FrontEnd\UserControls\LoginView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

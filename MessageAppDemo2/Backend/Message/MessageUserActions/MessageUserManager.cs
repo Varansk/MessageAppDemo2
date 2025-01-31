@@ -5,6 +5,7 @@ using MessageAppDemo2.Backend.DataBase.RealTimeQueue.Interfaces;
 using MessageAppDemo2.Backend.DataBase.Repositorys;
 using MessageAppDemo2.Backend.Message.MessageDatas.Interfaces;
 using MessageAppDemo2.Backend.Message.MessageUserActions.Factory;
+using MessageAppDemo2.FrontEnd.FrontEnd_BackendActions.ViewModels.App.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -23,7 +24,7 @@ namespace MessageAppDemo2.Backend.Message.MessageUserActions
 
             dynamic messageuseract = messagefac.CreateInstance((MessageType)Message);
 
-            messageuseract.SendMessage(Message, ChannelID, Route, SenderGuid);
+            messageuseract.GetType().GetMethod("SendMessage").Invoke(messageuseract, new object[] { Message, ChannelID, Route, SenderGuid });
         }
         public void RemoveMessage(MessageType messageType, string MessageID, string ChannelID, string Route)
         {

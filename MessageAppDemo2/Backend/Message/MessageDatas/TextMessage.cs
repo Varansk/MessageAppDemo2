@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MessageAppDemo2.Backend.Message.MessageDatas
 {
-    public class TextMessage : MessageBase, IFileUploadableMessage<UploadedFile>, IHaveQuotedMessage, IHaveTextMessage
+    public class TextMessage : MessageBase, IHaveQuotedMessage, IHaveTextMessage
     {
         private MessageBase _QuotedMessage;
         private string _Text;

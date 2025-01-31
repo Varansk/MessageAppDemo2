@@ -53,7 +53,7 @@ namespace MessageAppDemo2 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MessageAppDemo2;V1.0.0.0;component/frontend/windows/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MessageAppDemo2;component/frontend/windows/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\FrontEnd\Windows\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

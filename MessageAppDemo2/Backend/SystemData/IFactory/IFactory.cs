@@ -10,7 +10,7 @@ namespace MessageAppDemo2.Backend.SystemData.IFactory
     public interface IFactory<BaseType, in TypesEnum> where TypesEnum : Enum where BaseType : class
     {
         BaseType CreateInstance(TypesEnum type);
-        BaseType CreateInstanceWithParameter(TypesEnum type, object[] parameters);
+        BaseType CreateInstanceWithParameter(TypesEnum type, params object[] parameters);
 
         T CreateInstance<T>(TypesEnum type) where T : BaseType;
         T CreateInstanceWithParameter<T>(TypesEnum type, params object[] parameters) where T : BaseType;

@@ -95,7 +95,7 @@ namespace MessageAppDemo2
 
 
 
-           
+
             #region TestArea
             Guid[] gds = new Guid[] { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
 
@@ -151,7 +151,7 @@ namespace MessageAppDemo2
 
             LoggedUserPool.AddLoggedUser(person);
 
-           
+
 
 
             MessageUserManager messageUserManager = new MessageUserManager();
@@ -169,7 +169,7 @@ namespace MessageAppDemo2
 
 
             var tags = messageUserManager.StartConsumeMessages(groupChat.ChatID.ToString(), ".main", list);
-           // var tags2 = messageUserManager.StartConsumeMessages(normalChat.ChatID.ToString(), ".main.RR", list2);
+            // var tags2 = messageUserManager.StartConsumeMessages(normalChat.ChatID.ToString(), ".main.RR", list2);
 
 
             messageUserManager.SendMessage(new TextMessage() { Text = "Hello1", WhichChatMessageSent = groupChat, MessageID = 5, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, groupChat.ChatID.ToString(), ".main", gds[2].ToString());
@@ -178,23 +178,23 @@ namespace MessageAppDemo2
 
             messageUserManager.EditMessage("6", groupChat.ChatID.ToString(), ".main", new TextMessage() { Text = "AQWDA", WhichChatMessageSent = groupChat, MessageID = 6, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = groupChat.ChatID, MessageSenderID = gds[2] }, gds[2].ToString());
 
-         //   messageUserManager.RemoveMessage(MessageType.TextMessage, 5.ToString(), groupChat.ChatID.ToString(), ".main");
-
-            
+            //   messageUserManager.RemoveMessage(MessageType.TextMessage, 5.ToString(), groupChat.ChatID.ToString(), ".main");
 
 
-            messageUserManager.SendMessage(new VideoMessage() { Text = "İMMM", WhichChatMessageSent = normalChat, MessageID = 2, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = normalChat.ChatID, MessageSenderID = gds[2] }, normalChat.ChatID.ToString(), ".main.RR", gds[2].ToString());
+
+            MessageBase x = new VideoMessage() { Text = "İMMM", WhichChatMessageSent = normalChat, MessageID = 2, IsEdited = false, MessageSender = person, MessageSentDate = Convert.ToDateTime("01/10/2007"), ChatRoute = ".main", DependentChatGuid = normalChat.ChatID, MessageSenderID = gds[2] };
+            messageUserManager.SendMessage(x, normalChat.ChatID.ToString(), ".main.RR", gds[2].ToString());
 
 
             messageUserManager.StopConsumeMessages(tags);
             //messageUserManager.StopConsumeMessages(tags2);
-/*
-            for (int i = 0; i < 100; i++)
-            {           
-                MessageBox.Show("H");      
-            }
+            /*
+                        for (int i = 0; i < 100; i++)
+                        {           
+                            MessageBox.Show("H");      
+                        }
 
-            */
+                        */
 
 
 
